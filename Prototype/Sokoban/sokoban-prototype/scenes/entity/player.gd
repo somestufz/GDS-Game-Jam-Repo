@@ -5,6 +5,8 @@ extends Entity
 
 @onready var ray: RayCast2D = $RayDown
 
+var player_id := 0
+var active := true
 
 var inputs = {
 	"move_up" : Vector2.UP,
@@ -14,9 +16,10 @@ var inputs = {
 }
 
 func _unhandled_input(event: InputEvent) -> void:
-	for dir in inputs:
-		if Input.is_action_just_pressed(dir):
-			move(dir)
+	if active:
+		for dir in inputs:
+			if Input.is_action_just_pressed(dir):
+				move(dir)
 
 func move(dir):
 	var vector_change = inputs[dir] * tile_size
@@ -24,9 +27,17 @@ func move(dir):
 	ray.target_position = vector_change
 	ray.force_raycast_update()
 	
-	if ray.get_collider() != null:
-		if ray.get_collider().is_in_group("Walls"):
+	var collider = ray.get_collider()
+	
+	if collider != null:
+		if collider.is_in_group("Walls"):
 			print("cant")
+		elif(collider is Item):
+			var can_push = collider.push_direction(inputs[dir])
+			if can_push:
+				position += vector_change
+			else:
+				pass
 	else:
 		position += vector_change
 	

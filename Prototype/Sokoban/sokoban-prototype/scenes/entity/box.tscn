@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://clpdks2dsn0h8"]
+
+[ext_resource type="PackedScene" uid="uid://coevkkneie7mj" path="res://scenes/entity/item.tscn" id="1_vcwbx"]
+[ext_resource type="Texture2D" uid="uid://bxxu7ttqgl18g" path="res://assets/bin/greySquare.png" id="2_7k12j"]
+
+[node name="Box" unique_id=540745152 instance=ExtResource("1_vcwbx")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="2" unique_id=1437107442]
+modulate = Color(0.39141372, 0.17935708, 1.4439226e-07, 1)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("2_7k12j")
