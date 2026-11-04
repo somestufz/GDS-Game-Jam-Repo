@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://b5q2q7plmnst7" path="res://systems/states/player_fall_state.gd" id="10_3v2ag"]
 [ext_resource type="Script" uid="uid://bkqfac8sqcue3" path="res://systems/states/player_jump_state.gd" id="11_d2wvv"]
 [ext_resource type="Script" uid="uid://cijsx071kbp1v" path="res://systems/states/player_double_jump_state.gd" id="13_jej6c"]
+[ext_resource type="Script" uid="uid://bk0lf1glha2ok" path="res://scenes/a_ction_switching_component.gd" id="16_a8ls1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qlg0r"]
 size = Vector2(23, 24)
@@ -24,6 +25,8 @@ size = Vector2(23, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3v2ag"]
 size = Vector2(9, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqyp3"]
 
 [node name="Player" type="CharacterBody2D" unique_id=594763506]
 script = ExtResource("1_ur7pv")
@@ -35,9 +38,10 @@ shape = SubResource("RectangleShape2D_qlg0r")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=787747257]
 position = Vector2(0, -16)
 sprite_frames = ExtResource("2_g2els")
-animation = &"jumping"
+animation = &"running"
 autoplay = "idle"
-frame_progress = 1.0
+frame = 5
+frame_progress = 0.47175756
 
 [node name="HitBox" type="Area2D" parent="." unique_id=1483015195]
 collision_layer = 2
@@ -132,3 +136,19 @@ script = ExtResource("7_fjrip")
 character_body = NodePath("../..")
 animated_sprite = NodePath("../../AnimatedSprite2D")
 metadata/_custom_type_script = "uid://brxv7qrxnasds"
+
+[node name="ActionSwitchingComponent" type="Area2D" parent="." unique_id=2082472124 node_paths=PackedStringArray("action_state_dictionary", "active_action_state")]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("16_a8ls1")
+action_state_dictionary = {
+0: NodePath("../CharacterStateMachine/PlayerJumpingState"),
+1: NodePath("../CharacterStateMachine/PlayerRunState")
+}
+active_action_state = NodePath("../CharacterStateMachine/PlayerRunState")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActionSwitchingComponent" unique_id=1949390494]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_sqyp3")
+
+[connection signal="area_entered" from="ActionSwitchingComponent" to="ActionSwitchingComponent" method="_on_area_entered"]
