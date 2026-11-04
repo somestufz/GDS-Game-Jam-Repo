@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b0saxp7u1d2yi"]
+
+[ext_resource type="PackedScene" uid="uid://fy58olmq3t66" path="res://scenes/entity/entity.tscn" id="1_mtik4"]
+[ext_resource type="Script" uid="uid://dv26enas6vcdj" path="res://scenes/entity/object.gd" id="2_2tna0"]
+
+[node name="Object" unique_id=540745152 instance=ExtResource("1_mtik4")]
+script = ExtResource("2_2tna0")
+entity = null

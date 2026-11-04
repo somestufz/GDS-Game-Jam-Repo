@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://byy03f6xo6g2r"]
+
+[ext_resource type="PackedScene" uid="uid://fy58olmq3t66" path="res://scenes/entity/entity.tscn" id="1_1obkj"]
+[ext_resource type="Script" uid="uid://dfikkywawlbby" path="res://scenes/entity/player.gd" id="2_gdab3"]
+
+[node name="Player" unique_id=540745152 instance=ExtResource("1_1obkj")]
+script = ExtResource("2_gdab3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="2" unique_id=1879327918]

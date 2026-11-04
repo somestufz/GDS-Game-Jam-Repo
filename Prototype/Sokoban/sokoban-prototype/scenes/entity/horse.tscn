@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bbq0ei27skcst"]
+
+[ext_resource type="PackedScene" uid="uid://byy03f6xo6g2r" path="res://scenes/entity/player.tscn" id="1_y4jjl"]
+[ext_resource type="Script" uid="uid://cvxs7ceskxria" path="res://scenes/entity/horse.gd" id="2_30vfw"]
+[ext_resource type="Texture2D" uid="uid://bxxu7ttqgl18g" path="res://assets/bin/greySquare.png" id="3_b7fex"]
+
+[node name="Horse" unique_id=540745152 instance=ExtResource("1_y4jjl")]
+script = ExtResource("2_30vfw")
+
+[node name="Sprite2D" parent="." index="2" unique_id=1879327918]
+modulate = Color(0.99999994, 0.6242784, 0.3754661, 1)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("3_b7fex")
