@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://byhvj73qsecs3"]
+
+[ext_resource type="PackedScene" uid="uid://byy03f6xo6g2r" path="res://scenes/entity/player.tscn" id="1_t6r7j"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_umcnb"]
+load_path = "res://.godot/imported/greySquare.png-e60dd7d7ea8317060161f573c2bebdf9.ctex"
+
+[node name="Snake" unique_id=540745152 instance=ExtResource("1_t6r7j")]
+
+[node name="Sprite2D" parent="." index="2" unique_id=1879327918]
+modulate = Color(0.2627451, 0.5686275, 0.047058824, 1)
+scale = Vector2(0.12, 0.12)
+texture = SubResource("CompressedTexture2D_umcnb")

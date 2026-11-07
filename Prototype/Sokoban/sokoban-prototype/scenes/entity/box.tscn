@@ -5,7 +5,7 @@
 
 [node name="Box" unique_id=540745152 instance=ExtResource("1_vcwbx")]
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="2" unique_id=1437107442]
-modulate = Color(0.39141372, 0.17935708, 1.4439226e-07, 1)
+[node name="Sprite2D" parent="SpriteHolder" parent_id_path=PackedInt32Array(2057166936) index="0" unique_id=983468098]
+modulate = Color(0.69803923, 0.47843137, 0.33333334, 1)
 scale = Vector2(0.12, 0.12)
 texture = ExtResource("2_7k12j")

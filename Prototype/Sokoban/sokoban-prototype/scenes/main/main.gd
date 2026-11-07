@@ -15,11 +15,10 @@ func _process(delta: float) -> void:
 		shift()
 
 func shift() -> void:
-	print("shift shift")
 	var num_of_players = players.get_child_count()
 	
 	Globals.player_id += 1
-	if Globals.player_id >= num_of_players - 1:
+	if Globals.player_id > num_of_players - 1:
 		Globals.player_id = 0
 	
 	update_active_player()
@@ -27,7 +26,6 @@ func shift() -> void:
 func update_active_player():
 	for player in players.get_children():
 		player.active = (player.player_id == Globals.player_id)
-		print()
 	
 
 func assign_player_ids() -> void:

@@ -13,3 +13,7 @@ target_position = Vector2(0, 100)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=45387408]
 shape = SubResource("RectangleShape2D_k2fmo")
+
+[node name="SpriteHolder" type="Node2D" parent="." unique_id=2057166936]
+
+[node name="Sprite2D" type="Sprite2D" parent="SpriteHolder" unique_id=983468098]

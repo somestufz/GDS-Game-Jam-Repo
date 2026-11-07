@@ -5,5 +5,3 @@
 
 [node name="Player" unique_id=540745152 instance=ExtResource("1_1obkj")]
 script = ExtResource("2_gdab3")
-
-[node name="Sprite2D" type="Sprite2D" parent="." index="2" unique_id=1879327918]
