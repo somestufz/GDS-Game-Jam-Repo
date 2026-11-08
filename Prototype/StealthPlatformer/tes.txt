@@ -1,1 +1,43 @@
-sss
+Deleted code from oop project :
+
+        Exit R0R1 = new Exit("R0R1",R1,false);
+        R0R1.setSource(R0);
+        Exit R0R5 = new Exit("R0R5",R5,false);
+        R0R5.setSource(R0);
+        R0.addExit(R0R1);
+        R0.addExit(R0R5);
+
+        
+        
+        Exit R1R0 = new Exit("R1R0",R0,false);
+        R1R0.setSource(R1);
+        Exit R1R2 = new Exit("R1R2",R2,false);
+        R1R2.setSource(R1);
+        R1.addExit(R1R0);
+        R1.addExit(R1R2);
+
+        Exit R2R1 = new Exit("R2R1",R1,false);
+        R2R1.setSource(R2);
+        Exit R2R4 = new Exit("R2R4",R4,true);
+        R2R4.setSource(R2);
+        R2.addExit(R2R1);
+        R2.addExit(R2R4);
+        
+        Exit R3R1 = new Exit("R3R1",R1,false);
+        R3R1.setSource(R3);
+        Exit R3R5 = new Exit("R1R5",R5,false);
+        R3R5.setSource(R3);
+        R3.addExit(R3R1);
+        R3.addExit(R3R5);
+
+        Exit R4R2 = new Exit("R4R2",R2,false);
+        R4R2.setSource(R4);
+        Exit R2R4 = new Exit("R2R4",R4,false);
+        R4.addExit(R4R2);
+        
+        Exit R5R0 = new Exit("R5R0",R0,false);
+        R5R0.setSource(R5);
+        Exit R5R3 = new Exit("R5R3",R3,false);
+        R5R3.setSource(R5);
+        R5.addExit(R5R0);
+        R5.addExit(R5R3);

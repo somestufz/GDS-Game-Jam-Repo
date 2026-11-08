@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://d15cyonc5s284" path="res://scenes/entity/Wall.gd" id="3_6q06x"]
 [ext_resource type="PackedScene" uid="uid://bbq0ei27skcst" path="res://scenes/entity/horse.tscn" id="3_k2fmo"]
 [ext_resource type="PackedScene" uid="uid://clpdks2dsn0h8" path="res://scenes/entity/box.tscn" id="3_l3cfh"]
+[ext_resource type="PackedScene" uid="uid://byhvj73qsecs3" path="res://scenes/entity/snake.tscn" id="5_hujxm"]
+[ext_resource type="PackedScene" uid="uid://tai68c66gfal" path="res://scenes/interactables/plate_door.tscn" id="6_ow5a4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k2fmo"]
 texture = ExtResource("1_hyk8p")
@@ -54,6 +56,9 @@ position = Vector2(350, 250)
 [node name="Horse2" parent="Entities/Players" unique_id=540745152 instance=ExtResource("3_k2fmo")]
 position = Vector2(1250, 250)
 
+[node name="Snake" parent="Entities/Players" unique_id=1117243233 instance=ExtResource("5_hujxm")]
+position = Vector2(1250, 750)
+
 [node name="Items" type="Node2D" parent="Entities" unique_id=115791320]
 
 [node name="Box" parent="Entities/Items" unique_id=81959154 instance=ExtResource("3_l3cfh")]
@@ -61,3 +66,9 @@ position = Vector2(550, 350)
 
 [node name="Box2" parent="Entities/Items" unique_id=535871200 instance=ExtResource("3_l3cfh")]
 position = Vector2(650, 350)
+
+[node name="Interactables" type="Node2D" parent="Entities" unique_id=1227834798]
+
+[node name="PlateDoor" parent="Entities/Interactables" unique_id=1655735542 instance=ExtResource("6_ow5a4")]
+position = Vector2(450, 750)
+door_offset = Vector2(2, 0)

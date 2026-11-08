@@ -55,6 +55,10 @@ func push_direction(dir : Vector2) -> bool:
 	
 	return true
 
+func pull_direction(dir : Vector2) -> void:
+	print("being pulled")
+	move(dir)
+
 func move(dir):
 	var vector_change = dir * tile_size
 	#position += vector_change

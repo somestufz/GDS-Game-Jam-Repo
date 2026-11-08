@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://tai68c66gfal"]
+
+[ext_resource type="PackedScene" uid="uid://dyt4xo1kinyxp" path="res://scenes/interactables/interactables.tscn" id="1_vhpfh"]
+[ext_resource type="Texture2D" uid="uid://cfsovkrj48qwm" path="res://assets/bin/pressurePlatePixelText.png" id="2_ssuha"]
+[ext_resource type="Script" uid="uid://b0u1jls38r781" path="res://scenes/interactables/plate_door.gd" id="2_ufra8"]
+[ext_resource type="Texture2D" uid="uid://cslbpytwptx4i" path="res://assets/bin/greyerSquare.png" id="3_efuvt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ow5a4"]
+size = Vector2(90, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrfel"]
+size = Vector2(75, 100)
+
+[node name="PlateDoor" unique_id=1655735542 instance=ExtResource("1_vhpfh")]
+script = ExtResource("2_ufra8")
+door_offset = null
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1472754472]
+shape = SubResource("RectangleShape2D_ow5a4")
+
+[node name="Sprite2D" parent="SpriteHolder" parent_id_path=PackedInt32Array(366589474) index="0" unique_id=1448782445]
+texture = ExtResource("2_ssuha")
+
+[node name="DoorJoint" type="Node2D" parent="." index="2" unique_id=902980476]
+
+[node name="Door" type="StaticBody2D" parent="DoorJoint" index="0" unique_id=1409027656 groups=["Walls"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorJoint/Door" index="0" unique_id=1953588676]
+shape = SubResource("RectangleShape2D_xrfel")
+
+[node name="Sprite2D" type="Sprite2D" parent="DoorJoint/Door" index="1" unique_id=1629538522]
+modulate = Color(0.27935672, 0.27935672, 0.27935672, 1)
+scale = Vector2(0.15, 0.2)
+texture = ExtResource("3_efuvt")

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dyt4xo1kinyxp"]
+
+[ext_resource type="Script" uid="uid://bdtcgoc85go2c" path="res://scenes/interactables/interactables.gd" id="1_5ib7w"]
+
+[node name="Interactables" type="Area2D" unique_id=1655735542]
+script = ExtResource("1_5ib7w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1472754472]
+
+[node name="SpriteHolder" type="Node2D" parent="." unique_id=366589474]
+
+[node name="Sprite2D" type="Sprite2D" parent="SpriteHolder" unique_id=1448782445]
