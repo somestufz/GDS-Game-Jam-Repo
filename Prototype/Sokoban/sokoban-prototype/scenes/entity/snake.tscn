@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://byy03f6xo6g2r" path="res://scenes/entity/player.tscn" id="1_t6r7j"]
 [ext_resource type="Script" uid="uid://bcrb0rgayg8j0" path="res://scenes/entity/snake.gd" id="2_em60n"]
 [ext_resource type="Texture2D" uid="uid://bxxu7ttqgl18g" path="res://assets/bin/greySquare.png" id="2_umcnb"]
+[ext_resource type="Texture2D" uid="uid://r24bkhbtaayv" path="res://assets/bin/snake (pull).png" id="4_nn8d1"]
 
 [node name="Snake" unique_id=540745152 instance=ExtResource("1_t6r7j")]
 script = ExtResource("2_em60n")
@@ -11,3 +12,8 @@ script = ExtResource("2_em60n")
 modulate = Color(0.21526021, 0.49827385, 0.21351466, 1)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_umcnb")
+
+[node name="Sprite2D2" type="Sprite2D" parent="SpriteHolder" parent_id_path=PackedInt32Array(2057166936) index="1" unique_id=1838816720]
+modulate = Color(0.21526021, 0.49827385, 0.21351466, 1)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_nn8d1")

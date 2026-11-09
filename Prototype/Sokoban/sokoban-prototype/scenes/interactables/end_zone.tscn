@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dsjphmga78ryh"]
+
+[ext_resource type="PackedScene" uid="uid://dyt4xo1kinyxp" path="res://scenes/interactables/interactables.tscn" id="1_2vqnb"]
+[ext_resource type="Texture2D" uid="uid://dwww12kec6rog" path="res://assets/bin/endZone.png" id="2_a071p"]
+[ext_resource type="Script" uid="uid://bave8g6p4q7ul" path="res://scenes/interactables/end_zone.gd" id="2_ov2h7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ov2h7"]
+size = Vector2(90, 90)
+
+[node name="EndZone" unique_id=1655735542 instance=ExtResource("1_2vqnb")]
+script = ExtResource("2_ov2h7")
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1472754472]
+shape = SubResource("RectangleShape2D_ov2h7")
+
+[node name="Sprite2D" parent="SpriteHolder" parent_id_path=PackedInt32Array(366589474) index="0" unique_id=1448782445]
+texture = ExtResource("2_a071p")

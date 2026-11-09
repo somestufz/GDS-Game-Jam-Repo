@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://byy03f6xo6g2r" path="res://scenes/entity/player.tscn" id="1_y4jjl"]
 [ext_resource type="Script" uid="uid://cvxs7ceskxria" path="res://scenes/entity/horse.gd" id="2_30vfw"]
 [ext_resource type="Texture2D" uid="uid://bxxu7ttqgl18g" path="res://assets/bin/greySquare.png" id="3_b7fex"]
+[ext_resource type="Texture2D" uid="uid://6mdpnck4eihi" path="res://assets/bin/horse (push).png" id="4_xipjb"]
 
 [node name="Horse" unique_id=540745152 instance=ExtResource("1_y4jjl")]
 script = ExtResource("2_30vfw")
@@ -11,3 +12,8 @@ script = ExtResource("2_30vfw")
 modulate = Color(0.8235294, 0.49019608, 0.4627451, 1)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("3_b7fex")
+
+[node name="Sprite2D2" type="Sprite2D" parent="SpriteHolder" parent_id_path=PackedInt32Array(2057166936) index="1" unique_id=1344355494]
+modulate = Color(0.8235294, 0.49019608, 0.4627451, 1)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_xipjb")

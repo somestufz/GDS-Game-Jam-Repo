@@ -3,18 +3,6 @@ extends Player
 
 
 func player_action(collider, dir, vector_change) -> void:
-	#if collider != null:
-		#if collider.is_in_group("Walls"):
-			#pass
-		#elif(collider is Item or collider is Player):
-			#var can_push = collider.push_direction(inputs[dir])
-			#if can_push:
-				#move_anim(vector_change)
-			#else:
-				#pass
-	#else:
-		#move_anim(vector_change)
-	
 	if collider == null:
 		move_anim(vector_change)
 		

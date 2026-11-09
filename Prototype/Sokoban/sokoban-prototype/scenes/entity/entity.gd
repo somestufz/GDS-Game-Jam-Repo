@@ -42,6 +42,10 @@ func push_direction(dir : Vector2) -> bool:
 	if collider == null:
 		move(dir)
 		return true
+	elif collider is Chamaeleon:
+		if collider.ability:
+			move(dir)
+			return true
 	elif(collider is Item or collider is Player):
 		var move_bool = collider.push_direction(dir)
 		if move_bool:
@@ -56,7 +60,6 @@ func push_direction(dir : Vector2) -> bool:
 	return true
 
 func pull_direction(dir : Vector2) -> void:
-	print("being pulled")
 	move(dir)
 
 func move(dir):
