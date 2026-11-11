@@ -8,6 +8,7 @@ enum entities {HORSE,BOX,WALL}
 @onready var ray_1: RayCast2D = $RayDown
 @onready var sprite_holder: Node2D = $SpriteHolder
 
+"""make toolscript for position"""
 
 func push_direction(dir : Vector2) -> bool:
 	
@@ -38,10 +39,13 @@ func push_direction(dir : Vector2) -> bool:
 	
 	var collider = ray_1.get_collider()
 	
+	var extra_push_result = push_extra_check()
 	
 	if collider == null:
 		move(dir)
 		return true
+	elif extra_push_result != null:
+		return extra_push_result
 	elif collider is Chamaeleon:
 		print(collider.ability)
 		if collider.ability:
@@ -65,6 +69,9 @@ func push_direction(dir : Vector2) -> bool:
 		return false
 	
 	return true
+
+func push_extra_check():
+	return null
 
 func pull_direction(dir : Vector2) -> void:
 	move(dir)

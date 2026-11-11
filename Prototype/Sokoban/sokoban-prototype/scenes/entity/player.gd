@@ -4,7 +4,7 @@ extends Entity
 
 
 @onready var ray: RayCast2D = $RayDown
-
+@onready var main : Node2D = $"../../.."
 
 var player_id := 0
 var active := true:
@@ -33,7 +33,7 @@ func _process(delta: float) -> void:
 	if active:
 		if !done_action and buffer_action != "":
 			player_move(buffer_action)
-			
+			main.player_move()
 			buffer_action = ""
 	else:
 		buffer_action = ""
