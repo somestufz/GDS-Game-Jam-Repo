@@ -1,0 +1,14 @@
+The plate door is the pressure plate and door,  it works by placing the pressure plate and then saying the grid offset of where the door is and the rotation that the door will close from. e.g. 90 will make it horizontal instead of vertical
+
+The locked door will be under interactables
+
+plate door and pressure plate as of now cant just be next to eachother, cus you can run off the plate
+the plate door is also bugged such that whatever is left in it while closed is bugged.
+
+
+
+CODING THINGS:
+	
+	undoing action under interactables may require hard coding what they change
+	for example the locked door being unlocked needs specific hard coding
+	

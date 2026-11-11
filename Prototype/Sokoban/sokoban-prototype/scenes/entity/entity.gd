@@ -9,6 +9,7 @@ enum entities {HORSE,BOX,WALL}
 @onready var sprite_holder: Node2D = $SpriteHolder
 
 """make toolscript for position"""
+'''puzzle script as a way to make puzzles'''
 
 func push_direction(dir : Vector2) -> bool:
 	

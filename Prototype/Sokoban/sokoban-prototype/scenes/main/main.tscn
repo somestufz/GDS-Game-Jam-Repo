@@ -49,3 +49,6 @@ script = ExtResource("3_6q06x")
 [node name="Players" type="Node2D" parent="Entities" unique_id=569333621]
 
 [node name="Items" type="Node2D" parent="Entities" unique_id=115791320]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1970743919]
+position = Vector2(960, 540)

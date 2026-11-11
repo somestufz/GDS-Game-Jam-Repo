@@ -5,6 +5,8 @@ extends Interactable
 @export var door_rotation : int = 0
 @onready var door_joint: Node2D = $DoorJoint
 @onready var door: StaticBody2D = $DoorJoint/Door
+@onready var door_sprite: Sprite2D = $DoorJoint/Door/DoorSprite
+
 
 var pressed := false
 var pressed_counter = 0
@@ -16,12 +18,11 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	door.position = lerp(door.position,Vector2(0,1 * clamp(pressed_counter,0,1) * tile_size),delta * 8.0)
-	
+	#door_sprite.global_position = lerp(door.position,Vector2(0,1 * clamp(pressed_counter,0,1) * tile_size),delta * 8.0)
 
 func player_entered(body : Node2D) -> void:
 	pressed = true
 	pressed_counter += 1
-	print(pressed)
 
 func item_entered(body : Node2D) -> void:
 	pressed = true

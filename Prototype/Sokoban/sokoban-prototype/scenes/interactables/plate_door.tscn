@@ -29,7 +29,7 @@ texture = ExtResource("2_ssuha")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorJoint/Door" index="0" unique_id=1953588676]
 shape = SubResource("RectangleShape2D_xrfel")
 
-[node name="Sprite2D" type="Sprite2D" parent="DoorJoint/Door" index="1" unique_id=1629538522]
+[node name="DoorSprite" type="Sprite2D" parent="DoorJoint/Door" index="1" unique_id=1629538522]
 modulate = Color(0.27935672, 0.27935672, 0.27935672, 1)
 scale = Vector2(0.15, 0.2)
 texture = ExtResource("3_efuvt")
