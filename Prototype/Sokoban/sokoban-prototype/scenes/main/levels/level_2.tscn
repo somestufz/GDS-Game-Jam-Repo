@@ -30,7 +30,7 @@ position = Vector2(1550, 250)
 position = Vector2(1550, 350)
 
 [node name="Horse" parent="Entities/Players" parent_id_path=PackedInt32Array(569333621) index="0" unique_id=540745152 instance=ExtResource("4_vx5yg")]
-position = Vector2(350, 250)
+position = Vector2(350, 450)
 
 [node name="Snake" parent="Entities/Players" parent_id_path=PackedInt32Array(569333621) index="1" unique_id=835559977 instance=ExtResource("5_xss56")]
 position = Vector2(1250, 750)

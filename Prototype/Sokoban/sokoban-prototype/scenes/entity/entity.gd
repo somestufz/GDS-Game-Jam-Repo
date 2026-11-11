@@ -43,9 +43,17 @@ func push_direction(dir : Vector2) -> bool:
 		move(dir)
 		return true
 	elif collider is Chamaeleon:
+		print(collider.ability)
 		if collider.ability:
 			move(dir)
 			return true
+		else:
+			var move_bool = collider.push_direction(dir)
+			if move_bool:
+				move(dir)
+				return true
+			else:
+				return false
 	elif(collider is Item or collider is Player):
 		var move_bool = collider.push_direction(dir)
 		if move_bool:
@@ -55,7 +63,6 @@ func push_direction(dir : Vector2) -> bool:
 			return false
 	elif((collider).is_in_group("Walls")):
 		return false
-	
 	
 	return true
 
@@ -71,7 +78,7 @@ func twitch_anim():
 	var tween = get_tree().create_tween()
 	tween.tween_property(sprite_holder,"scale",Vector2(0.9,0.9),0.1)
 	tween.tween_property(sprite_holder,"scale",Vector2(1.0,1.0),0.1)
-	
+
 func move_anim(vector_change):
 	var tween = get_tree().create_tween()
 	tween.tween_property(self,"position",position + vector_change,0.1)
