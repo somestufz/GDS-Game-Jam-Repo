@@ -10,4 +10,4 @@ func player_entered(body : Node2D) -> void:
 	Globals.end_zone_count += 1
 
 func player_exit(body : Node2D) -> void:
-	Globals.end_zone_count += 1
+	Globals.end_zone_count -= 1
