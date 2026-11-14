@@ -1,0 +1,79 @@
+[gd_scene format=4 uid="uid://dv0n8542hgxgn"]
+
+[ext_resource type="PackedScene" uid="uid://d1v55yw28f1n0" path="res://scenes/main/main.tscn" id="1_6lc6i"]
+[ext_resource type="PackedScene" uid="uid://tai68c66gfal" path="res://scenes/interactables/plate_door.tscn" id="2_6trim"]
+[ext_resource type="PackedScene" uid="uid://dsjphmga78ryh" path="res://scenes/interactables/end_zone.tscn" id="3_5xtwx"]
+[ext_resource type="PackedScene" uid="uid://bbq0ei27skcst" path="res://scenes/entity/horse.tscn" id="4_d2pc6"]
+[ext_resource type="PackedScene" uid="uid://byhvj73qsecs3" path="res://scenes/entity/snake.tscn" id="5_5kc4a"]
+[ext_resource type="PackedScene" uid="uid://dpisgawlv7lhh" path="res://scenes/entity/kangaroo.tscn" id="6_c83pk"]
+[ext_resource type="PackedScene" uid="uid://clpdks2dsn0h8" path="res://scenes/entity/box.tscn" id="7_l0fyt"]
+[ext_resource type="Script" uid="uid://6uw8euyvey18" path="res://scenes/main/levels/temporary_tutorial.gd" id="8_8xd0x"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_j2atq"]
+font_size = 24
+
+[node name="Level2" unique_id=1366407638 instance=ExtResource("1_6lc6i")]
+
+[node name="TileMapLayerWalls" parent="." index="1" unique_id=1789399568]
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAEAAAAAAAEAAQAAAAEAAAAAAAIAAQAAAAEAAAAAAAMAAQAAAAEAAAAAAAQAAQAAAAEAAAAAAAUAAQAAAAEAAAAAAAYAAQAAAAEAAAAAAAcAAQAAAAEAAAAAAAgAAQAAAAEAAAABAAAAAQAAAAEAAAABAAEAAQAAAAEAAAABAAIAAQAAAAEAAAABAAMAAQAAAAEAAAABAAQAAQAAAAEAAAABAAUAAQAAAAEAAAABAAYAAQAAAAEAAAABAAcAAQAAAAEAAAABAAgAAQAAAAEAAAACAAAAAQAAAAEAAAACAAYAAQAAAAEAAAACAAcAAQAAAAEAAAACAAgAAQAAAAEAAAADAAAAAQAAAAEAAAADAAYAAQAAAAEAAAADAAcAAQAAAAEAAAADAAgAAQAAAAEAAAAEAAAAAQAAAAEAAAAEAAYAAQAAAAEAAAAEAAcAAQAAAAEAAAAEAAgAAQAAAAEAAAAFAAAAAQAAAAEAAAAFAAYAAQAAAAEAAAAFAAcAAQAAAAEAAAAFAAgAAQAAAAEAAAAGAAAAAQAAAAEAAAAGAAYAAQAAAAEAAAAGAAcAAQAAAAEAAAAGAAgAAQAAAAEAAAAHAAAAAQAAAAEAAAAHAAEAAQAAAAEAAAAHAAIAAQAAAAEAAAAHAAYAAQAAAAEAAAAHAAcAAQAAAAEAAAAHAAgAAQAAAAEAAAAIAAAAAQAAAAEAAAAIAAEAAQAAAAEAAAAIAAIAAQAAAAEAAAAIAAQAAQAAAAEAAAAIAAUAAQAAAAEAAAAIAAYAAQAAAAEAAAAIAAcAAQAAAAEAAAAIAAgAAQAAAAEAAAAJAAAAAQAAAAEAAAAJAAEAAQAAAAEAAAAJAAIAAQAAAAEAAAAKAAAAAQAAAAEAAAAKAAEAAQAAAAEAAAAKAAIAAQAAAAEAAAALAAAAAQAAAAEAAAALAAEAAQAAAAEAAAALAAIAAQAAAAEAAAAMAAAAAQAAAAEAAAAMAAEAAQAAAAEAAAAMAAIAAQAAAAEAAAANAAAAAQAAAAEAAAAAAAkAAQAAAAEAAAABAAkAAQAAAAEAAAACAAkAAQAAAAEAAAADAAkAAQAAAAEAAAAEAAkAAQAAAAEAAAAFAAkAAQAAAAEAAAAGAAkAAQAAAAEAAAAHAAkAAQAAAAEAAAAIAAkAAQAAAAEAAAAJAAkAAQAAAAEAAAAKAAkAAQAAAAEAAAALAAkAAQAAAAEAAAAMAAkAAQAAAAEAAAANAAkAAQAAAAEAAAAOAAkAAQAAAAEAAAAOAAAAAQAAAAEAAAAAAAoAAQAAAAEAAAABAAoAAQAAAAEAAAACAAoAAQAAAAEAAAADAAoAAQAAAAEAAAAEAAoAAQAAAAEAAAAFAAoAAQAAAAEAAAAGAAoAAQAAAAEAAAAHAAoAAQAAAAEAAAAIAAoAAQAAAAEAAAAJAAoAAQAAAAEAAAAKAAoAAQAAAAEAAAALAAoAAQAAAAEAAAAMAAoAAQAAAAEAAAANAAoAAQAAAAEAAAAOAAoAAQAAAAEAAAAPAAoAAQAAAAEAAAAPAAkAAQAAAAEAAAAPAAAAAQAAAAEAAAAQAAkAAQAAAAEAAAARAAgAAQAAAAEAAAASAAcAAQAAAAEAAAAQAAcAAQAAAAEAAAARAAYAAQAAAAEAAAASAAUAAQAAAAEAAAARAAoAAQAAAAEAAAASAAkAAQAAAAEAAAAQAAUAAQAAAAEAAAARAAQAAQAAAAEAAAASAAMAAQAAAAEAAAAQAAMAAQAAAAEAAAARAAIAAQAAAAEAAAASAAEAAQAAAAEAAAAQAAEAAQAAAAEAAAARAAAAAQAAAAEAAAAQAAoAAQAAAAEAAAARAAkAAQAAAAEAAAASAAgAAQAAAAEAAAAQAAgAAQAAAAEAAAARAAcAAQAAAAEAAAASAAYAAQAAAAEAAAAQAAYAAQAAAAEAAAARAAUAAQAAAAEAAAASAAQAAQAAAAEAAAAQAAQAAQAAAAEAAAARAAMAAQAAAAEAAAASAAIAAQAAAAEAAAAQAAIAAQAAAAEAAAARAAEAAQAAAAEAAAASAAAAAQAAAAEAAAAQAAAAAQAAAAEAAAASAAoAAQAAAAEAAAAAAAsAAQAAAAEAAAABAAsAAQAAAAEAAAACAAsAAQAAAAEAAAADAAsAAQAAAAEAAAAEAAsAAQAAAAEAAAAFAAsAAQAAAAEAAAAGAAsAAQAAAAEAAAAHAAsAAQAAAAEAAAAIAAsAAQAAAAEAAAAJAAsAAQAAAAEAAAAKAAsAAQAAAAEAAAALAAsAAQAAAAEAAAAMAAsAAQAAAAEAAAANAAsAAQAAAAEAAAAOAAsAAQAAAAEAAAAPAAsAAQAAAAEAAAAQAAsAAQAAAAEAAAARAAsAAQAAAAEAAAASAAsAAQAAAAEAAAATAAsAAQAAAAEAAAATAAoAAQAAAAEAAAATAAkAAQAAAAEAAAATAAgAAQAAAAEAAAATAAcAAQAAAAEAAAATAAYAAQAAAAEAAAATAAUAAQAAAAEAAAATAAQAAQAAAAEAAAATAAMAAQAAAAEAAAATAAIAAQAAAAEAAAATAAEAAQAAAAEAAAATAAAAAQAAAAEAAAAKAAQAAQAAAAEAAAAKAAUAAQAAAAEAAAALAAQAAQAAAAEAAAALAAUAAQAAAAEAAAALAAYAAQAAAAEAAAAMAAQAAQAAAAEAAAAMAAUAAQAAAAEAAAAMAAYAAQAAAAEAAAANAAQAAQAAAAEAAAANAAUAAQAAAAEAAAANAAYAAQAAAAEAAAAOAAYAAQAAAAEAAAAOAAUAAQAAAAEAAAAOAAQAAQAAAAEAAAAPAAYAAQAAAAEAAAAPAAUAAQAAAAEAAAAPAAQAAQAAAAEAAAA=")
+
+[node name="PlateDoor" parent="Entities/Interactables" parent_id_path=PackedInt32Array(1227834798) index="0" unique_id=1655735542 instance=ExtResource("2_6trim")]
+position = Vector2(950, 750)
+door_offset = Vector2(3, -4)
+
+[node name="EndZone" parent="Entities/Interactables" parent_id_path=PackedInt32Array(1227834798) index="1" unique_id=591851160 instance=ExtResource("3_5xtwx")]
+position = Vector2(1550, 150)
+
+[node name="EndZone2" parent="Entities/Interactables" parent_id_path=PackedInt32Array(1227834798) index="2" unique_id=273383771 instance=ExtResource("3_5xtwx")]
+position = Vector2(1550, 250)
+
+[node name="EndZone3" parent="Entities/Interactables" parent_id_path=PackedInt32Array(1227834798) index="3" unique_id=132839894 instance=ExtResource("3_5xtwx")]
+position = Vector2(1550, 350)
+
+[node name="Horse" parent="Entities/Players" parent_id_path=PackedInt32Array(569333621) index="0" unique_id=1380260236 instance=ExtResource("4_d2pc6")]
+position = Vector2(350, 450)
+
+[node name="Snake" parent="Entities/Players" parent_id_path=PackedInt32Array(569333621) index="1" unique_id=835559977 instance=ExtResource("5_5kc4a")]
+position = Vector2(1250, 750)
+
+[node name="Kangaroo" parent="Entities/Players" parent_id_path=PackedInt32Array(569333621) index="2" unique_id=540745152 instance=ExtResource("6_c83pk")]
+position = Vector2(950, 550)
+
+[node name="Box" parent="Entities/Items" parent_id_path=PackedInt32Array(115791320) index="0" unique_id=1766911777 instance=ExtResource("7_l0fyt")]
+position = Vector2(550, 350)
+
+[node name="Box2" parent="Entities/Items" parent_id_path=PackedInt32Array(115791320) index="1" unique_id=1414279603 instance=ExtResource("7_l0fyt")]
+position = Vector2(650, 350)
+
+[node name="TemporaryTutorial" type="CanvasLayer" parent="." index="3" unique_id=1295457269]
+script = ExtResource("8_8xd0x")
+
+[node name="BottomLeft" type="Control" parent="TemporaryTutorial" index="0" unique_id=730798582]
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TemporaryTutorial/BottomLeft" index="0" unique_id=58313874]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 78.0
+offset_right = 382.0
+offset_bottom = 286.0
+
+[node name="Label" type="Label" parent="TemporaryTutorial/BottomLeft/VBoxContainer" index="0" unique_id=1211351181]
+layout_mode = 2
+text = "quick tutorial :
+
+Shift to switch between the different animals.
+Space to activate abilities (only on chamaleon)
+
+the goal is to get all the animals in the end zone
+the door is activated by pressure plate.
+"
+label_settings = SubResource("LabelSettings_j2atq")
+
+[node name="Label2" type="Label" parent="TemporaryTutorial/BottomLeft/VBoxContainer" index="1" unique_id=1284777654]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_j2atq")
