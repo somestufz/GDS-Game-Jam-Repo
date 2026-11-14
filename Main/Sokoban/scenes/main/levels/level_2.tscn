@@ -74,6 +74,10 @@ the door is activated by pressure plate.
 "
 label_settings = SubResource("LabelSettings_j2atq")
 
+<<<<<<< Updated upstream:Main/Sokoban/scenes/main/levels/level_2.tscn
 [node name="Label2" type="Label" parent="TemporaryTutorial/BottomLeft/VBoxContainer" index="1" unique_id=1284777654]
 layout_mode = 2
 label_settings = SubResource("LabelSettings_j2atq")
+=======
+[node name="Main" parent="." index="4" unique_id=866238136 instance=ExtResource("1_pk60g")]
+>>>>>>> Stashed changes:Prototype/Sokoban/sokoban-prototype/scenes/main/levels/level_2.tscn
