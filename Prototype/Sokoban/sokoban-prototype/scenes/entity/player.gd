@@ -30,6 +30,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				buffer_action = dir
 
 func _process(delta: float) -> void:
+	super(delta)
 	if active:
 		if !done_action and buffer_action != "":
 			player_move(buffer_action)

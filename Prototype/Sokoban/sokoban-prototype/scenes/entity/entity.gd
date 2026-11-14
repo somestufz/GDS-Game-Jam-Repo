@@ -1,3 +1,4 @@
+#@tool
 class_name Entity
 extends CharacterBody2D
 
@@ -10,6 +11,14 @@ enum entities {HORSE,BOX,WALL}
 
 """make toolscript for position"""
 '''puzzle script as a way to make puzzles'''
+
+func _process(delta: float) -> void:
+	pass
+	#if Engine.is_editor_hint():
+	#	global_position = global_position.snapped(Vector2(tile_size,tile_size))
+	#	print("im in editor")
+
+
 
 func push_direction(dir : Vector2) -> bool:
 	

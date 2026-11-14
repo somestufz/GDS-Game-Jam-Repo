@@ -33,3 +33,11 @@ shape = SubResource("RectangleShape2D_xrfel")
 modulate = Color(0.27935672, 0.27935672, 0.27935672, 1)
 scale = Vector2(0.15, 0.2)
 texture = ExtResource("3_efuvt")
+
+[node name="BlockArea" type="Area2D" parent="DoorJoint" index="1" unique_id=301925297]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorJoint/BlockArea" index="0" unique_id=1633908533]
+shape = SubResource("RectangleShape2D_xrfel")
+
+[connection signal="body_entered" from="DoorJoint/BlockArea" to="." method="_on_block_area_body_entered"]
+[connection signal="body_exited" from="DoorJoint/BlockArea" to="." method="_on_block_area_body_exited"]

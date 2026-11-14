@@ -9,7 +9,8 @@ extends Interactable
 
 
 var pressed := false
-var pressed_counter = 0
+var pressed_counter := 0
+var blocking_counter := 0
 
 func _ready() -> void:
 	super()
@@ -17,7 +18,7 @@ func _ready() -> void:
 	door.rotation_degrees = door_rotation
 
 func _process(delta: float) -> void:
-	door.position = lerp(door.position,Vector2(0,1 * clamp(pressed_counter,0,1) * tile_size),delta * 8.0)
+	door.position = lerp(door.position,Vector2(0,1 * clamp(pressed_counter + blocking_counter,0,1) * tile_size),delta * 8.0)
 	#door_sprite.global_position = lerp(door.position,Vector2(0,1 * clamp(pressed_counter,0,1) * tile_size),delta * 8.0)
 
 func player_entered(body : Node2D) -> void:
@@ -35,3 +36,13 @@ func player_exit(body : Node2D) -> void:
 func item_exit(body : Node2D) -> void:
 	pressed = false
 	pressed_counter -= 1
+
+
+
+func _on_block_area_body_entered(body: Node2D) -> void:
+	if body is Entity:
+		blocking_counter += 1
+
+func _on_block_area_body_exited(body: Node2D) -> void:
+	if body is Entity:
+		blocking_counter -= 1

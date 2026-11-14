@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://chkubp3wqn5um"]
+
+[ext_resource type="PackedScene" uid="uid://coevkkneie7mj" path="res://scenes/entity/item.tscn" id="1_hwign"]
+[ext_resource type="Texture2D" uid="uid://bxxu7ttqgl18g" path="res://assets/bin/greySquare.png" id="2_2mf1h"]
+[ext_resource type="Texture2D" uid="uid://b7w7crc21ou0t" path="res://assets/bin/key.png" id="3_6ndtw"]
+
+[node name="Key" unique_id=540745152 instance=ExtResource("1_hwign")]
+
+[node name="Sprite2D" parent="SpriteHolder" parent_id_path=PackedInt32Array(2057166936) index="0" unique_id=983468098]
+modulate = Color(1, 1, 0.7411765, 1)
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("2_2mf1h")
+
+[node name="Sprite2D2" type="Sprite2D" parent="SpriteHolder" parent_id_path=PackedInt32Array(2057166936) index="1" unique_id=294143820]
+texture = ExtResource("3_6ndtw")
