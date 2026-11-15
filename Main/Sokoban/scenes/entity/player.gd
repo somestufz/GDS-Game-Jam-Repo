@@ -33,8 +33,8 @@ func _process(delta: float) -> void:
 	super(delta)
 	if active:
 		if !done_action and buffer_action != "":
-			player_move(buffer_action)
 			main.player_move()
+			player_move(buffer_action)
 			buffer_action = ""
 	else:
 		buffer_action = ""

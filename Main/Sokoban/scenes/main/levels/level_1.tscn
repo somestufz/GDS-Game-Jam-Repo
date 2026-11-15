@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://byhvj73qsecs3" path="res://scenes/entity/snake.tscn" id="5_41m8q"]
 [ext_resource type="PackedScene" uid="uid://btupd63vocvj8" path="res://scenes/entity/chamaeleon.tscn" id="6_w1ux2"]
 [ext_resource type="PackedScene" uid="uid://clpdks2dsn0h8" path="res://scenes/entity/box.tscn" id="7_jgiix"]
+[ext_resource type="PackedScene" uid="uid://chkubp3wqn5um" path="res://scenes/entity/key.tscn" id="8_vycae"]
+[ext_resource type="PackedScene" uid="uid://cuw7sr0rubgm6" path="res://scenes/entity/locked_door.tscn" id="9_41m8q"]
 
 [node name="Level1" unique_id=1366407638 instance=ExtResource("1_w0juk")]
 
@@ -37,3 +39,9 @@ position = Vector2(550, 350)
 
 [node name="Box2" parent="Entities/Items" parent_id_path=PackedInt32Array(115791320) index="1" unique_id=1493483817 instance=ExtResource("7_jgiix")]
 position = Vector2(650, 350)
+
+[node name="Key" parent="Entities/Items" parent_id_path=PackedInt32Array(115791320) index="2" unique_id=2013999870 instance=ExtResource("8_vycae")]
+position = Vector2(450, 550)
+
+[node name="LockedDoor" parent="Entities/Items" parent_id_path=PackedInt32Array(115791320) index="3" unique_id=144733436 instance=ExtResource("9_41m8q")]
+position = Vector2(750, 350)

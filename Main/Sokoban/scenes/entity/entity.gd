@@ -49,7 +49,7 @@ func push_direction(dir : Vector2) -> bool:
 	
 	var collider = ray_1.get_collider()
 	
-	var extra_push_result = push_extra_check()
+	var extra_push_result = push_extra_check(collider)
 	
 	if collider == null:
 		move(dir)
@@ -80,7 +80,7 @@ func push_direction(dir : Vector2) -> bool:
 	
 	return true
 
-func push_extra_check():
+func push_extra_check(collider):
 	return null
 
 func pull_direction(dir : Vector2) -> void:
