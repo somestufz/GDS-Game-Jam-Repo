@@ -16,7 +16,7 @@ func _ready() -> void:
 	current_level = $Level
 
 func _process(delta: float) -> void:
-	print(Globals.end_zone_count, "/", Globals.end_zone_total)
+	#print(Globals.end_zone_count, "/", Globals.end_zone_total)
 	if Globals.end_zone_count == Globals.end_zone_total and ui.current_menu == "Game":
 		current_level_id += 1
 		load_to_level(current_level_id)
