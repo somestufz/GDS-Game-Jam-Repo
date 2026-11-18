@@ -14,7 +14,7 @@
 
 [node name="LevelManager" parent="." unique_id=294967547 instance=ExtResource("1_e64el")]
 position = Vector2(-960, -540)
-level_names = Array[String](["res://scenes/main/levels/level_horse_1.tscn", "res://scenes/main/levels/level_horse_2.tscn", "res://scenes/main/levels/level_horse_3.tscn", "res://scenes/main/levels/level_snake_1.tscn", "res://scenes/main/levels/level_snake_2.tscn", "res://scenes/main/levels/level_snake_3.tscn", "res://scenes/main/levels/level_M1.tscn", "res://scenes/main/levels/level_1.tscn", "res://scenes/main/levels/level_chameleon_1.tscn", "res://scenes/main/levels/level_chameleon_2.tscn", "res://scenes/main/levels/level_chameleon_3.tscn", "res://scenes/main/levels/level_kangaroo_1.tscn", "res://scenes/main/levels/level_kangaroo_2.tscn"])
+level_names = Array[String](["res://scenes/main/levels/level_horse_1.tscn", "res://scenes/main/levels/level_horse_3.tscn", "res://scenes/main/levels/level_snake_1.tscn", "res://scenes/main/levels/level_snake_2.tscn", "res://scenes/main/levels/level_snake_3.tscn", "res://scenes/main/levels/level_M1.tscn", "res://scenes/main/levels/level_1.tscn", "res://scenes/main/levels/level_chameleon_1.tscn", "res://scenes/main/levels/level_chameleon_2.tscn", "res://scenes/main/levels/level_chameleon_3.tscn", "res://scenes/main/levels/level_kangaroo_1.tscn", "res://scenes/main/levels/level_kangaroo_2.tscn"])
 
 [node name="UI" type="Control" parent="." unique_id=92902434]
 layout_mode = 3
