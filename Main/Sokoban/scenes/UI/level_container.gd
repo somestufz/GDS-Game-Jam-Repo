@@ -13,6 +13,6 @@ func set_level(value):
 	label.text = str(level_id + 1)
 
 func _gui_input(event: InputEvent) -> void:
-	print(str(level_id)+": detects an input")
+	#print(str(level_id)+": detects an input")
 	if event is InputEventMouseButton:
 		level_selected.emit(level_id)
