@@ -74,5 +74,6 @@ func move_anim(vector_change):
 	done_action = false
 
 func play_audio():
-	audio_stream_player.stream = audio_clips[randi() % len(audio_clips)]
+	pass
+	#audio_stream_player.stream = audio_clips[randi() % len(audio_clips)]
 	#audio_stream_player.play()
