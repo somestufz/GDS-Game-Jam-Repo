@@ -1,6 +1,10 @@
 extends HBoxContainer
 
 @onready var ui: Control = $".."
+@onready var level_manager: LevelManager = $"../../LevelManager"
 
 func _on_back_pressed() -> void:
-	ui.set_current_menu("MainMenu")
+	if level_manager.current_level_id == -1:
+		ui.set_current_menu("MainMenu")
+	else:
+		ui.set_current_menu("Pause")

@@ -2,7 +2,7 @@ class_name LevelManager
 extends Node2D
 
 var current_level : Node2D
-var current_level_id : int
+var current_level_id : int = -1
 
 @export var level_names : Array[String] = [
 	"res://scenes/main/levels/level_horse_1.tscn",
@@ -28,3 +28,13 @@ func load_to_level(id : int) -> void:
 	var level_scene_instance = level_scene.instantiate()
 	add_child(level_scene_instance)
 	current_level = level_scene_instance
+
+func deload() -> void:
+	print("deloading level")
+	current_level.queue_free()
+	
+	current_level_id = -1
+	
+	var level_scene = Node2D.new()
+	add_child(level_scene)
+	current_level = level_scene

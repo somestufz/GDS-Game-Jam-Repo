@@ -6,10 +6,15 @@
 [ext_resource type="Script" uid="uid://dov67a4moryo0" path="res://scenes/UI/main_menu.gd" id="2_gf1f2"]
 [ext_resource type="Script" uid="uid://bboa8jfbcitbl" path="res://scenes/UI/level_grid.gd" id="2_ma5rq"]
 [ext_resource type="PackedScene" uid="uid://c0dp7nsxo7cn6" path="res://scenes/UI/level_container.tscn" id="3_e3dby"]
+[ext_resource type="Script" uid="uid://bidttpsii63gi" path="res://scenes/UI/pause.gd" id="6_0rn35"]
 
 [node name="game" type="Node2D" unique_id=833251232]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=247875225]
+
+[node name="LevelManager" parent="." unique_id=294967547 instance=ExtResource("1_e64el")]
+position = Vector2(-960, -540)
+level_names = Array[String](["res://scenes/main/levels/level_horse_1.tscn", "res://scenes/main/levels/level_horse_2.tscn", "res://scenes/main/levels/level_horse_3.tscn", "res://scenes/main/levels/level_snake_1.tscn", "res://scenes/main/levels/level_snake_2.tscn", "res://scenes/main/levels/level_snake_3.tscn", "res://scenes/main/levels/level_M1.tscn", "res://scenes/main/levels/level_1.tscn"])
 
 [node name="UI" type="Control" parent="." unique_id=1602658547]
 layout_mode = 3
@@ -127,15 +132,81 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 93
 text = "Settings"
 
+[node name="Pause" type="VBoxContainer" parent="UI" unique_id=1500749934]
+custom_minimum_size = Vector2(1500, 1000)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -500.0
+offset_right = 500.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+script = ExtResource("6_0rn35")
+
+[node name="Label" type="Label" parent="UI/Pause" unique_id=754392886]
+custom_minimum_size = Vector2(1500, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 231
+text = "Paused"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ResumeContainer" type="MarginContainer" parent="UI/Pause" unique_id=1474055668]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Resume" type="Button" parent="UI/Pause/ResumeContainer" unique_id=1734246071]
+custom_minimum_size = Vector2(1000, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 93
+text = "Resume
+"
+
+[node name="LevelSelectContainer" type="MarginContainer" parent="UI/Pause" unique_id=703505304]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="LevelSelect" type="Button" parent="UI/Pause/LevelSelectContainer" unique_id=649067738]
+custom_minimum_size = Vector2(1000, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 93
+text = "Level Select
+"
+
+[node name="MenuContainer" type="MarginContainer" parent="UI/Pause" unique_id=317183982]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Main Menu" type="Button" parent="UI/Pause/MenuContainer" unique_id=986652658]
+custom_minimum_size = Vector2(1000, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 93
+text = "Main Menu"
+
 [node name="Game" type="Control" parent="UI" unique_id=1396552457]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LevelManager" parent="." unique_id=294967547 instance=ExtResource("1_e64el")]
-position = Vector2(-960, -540)
-level_names = Array[String](["res://scenes/main/levels/level_horse_1.tscn", "res://scenes/main/levels/level_horse_2.tscn", "res://scenes/main/levels/level_horse_3.tscn", "res://scenes/main/levels/level_snake_1.tscn", "res://scenes/main/levels/level_snake_2.tscn", "res://scenes/main/levels/level_snake_3.tscn", "res://scenes/main/levels/level_M1.tscn", "res://scenes/main/levels/level_1.tscn"])
-
 [connection signal="pressed" from="UI/LevelSelect/MarginContainer/Back" to="UI/LevelSelect" method="_on_back_pressed"]
 [connection signal="pressed" from="UI/MainMenu/StartContainer/StartSelect" to="UI/MainMenu" method="_on_start_select_pressed"]
 [connection signal="pressed" from="UI/MainMenu/LevelSelectContainer/LevelSelect" to="UI/MainMenu" method="_on_level_select_pressed"]
+[connection signal="pressed" from="UI/Pause/ResumeContainer/Resume" to="UI/Pause" method="_on_resume_pressed"]
+[connection signal="pressed" from="UI/Pause/LevelSelectContainer/LevelSelect" to="UI/Pause" method="_on_level_select_pressed"]
+[connection signal="pressed" from="UI/Pause/MenuContainer/Main Menu" to="UI/Pause" method="_on_main_menu_pressed"]
