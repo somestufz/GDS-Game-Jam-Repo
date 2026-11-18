@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://byhvj73qsecs3" path="res://scenes/entity/snake.tscn" id="5_41m8q"]
 [ext_resource type="PackedScene" uid="uid://btupd63vocvj8" path="res://scenes/entity/chamaeleon.tscn" id="6_w1ux2"]
 [ext_resource type="PackedScene" uid="uid://clpdks2dsn0h8" path="res://scenes/entity/box.tscn" id="7_jgiix"]
+[ext_resource type="PackedScene" uid="uid://dpisgawlv7lhh" path="res://scenes/entity/kangaroo.tscn" id="7_w1ux2"]
 [ext_resource type="PackedScene" uid="uid://chkubp3wqn5um" path="res://scenes/entity/key.tscn" id="8_vycae"]
 [ext_resource type="PackedScene" uid="uid://cuw7sr0rubgm6" path="res://scenes/entity/locked_door.tscn" id="9_41m8q"]
 
@@ -33,6 +34,9 @@ position = Vector2(1250, 750)
 
 [node name="Chamaeleon" parent="Entities/Players" parent_id_path=PackedInt32Array(569333621) index="2" unique_id=157653865 instance=ExtResource("6_w1ux2")]
 position = Vector2(1350, 250)
+
+[node name="Kangaroo" parent="Entities/Players" parent_id_path=PackedInt32Array(569333621) index="3" unique_id=374969225 instance=ExtResource("7_w1ux2")]
+position = Vector2(350, 850)
 
 [node name="Box" parent="Entities/Items" parent_id_path=PackedInt32Array(115791320) index="0" unique_id=873593554 instance=ExtResource("7_jgiix")]
 position = Vector2(550, 350)
