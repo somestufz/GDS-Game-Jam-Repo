@@ -23,6 +23,8 @@ func _process(delta: float) -> void:
 func load_to_level(id : int) -> void:
 	print("loading to " + str(id))
 	current_level.queue_free()
+	Globals.end_zone_count = 0
+	Globals.end_zone_total = 0
 	
 	current_level_id = id
 	
