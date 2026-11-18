@@ -5,6 +5,9 @@ extends Entity
 
 @onready var ray: RayCast2D = $RayDown
 @onready var main : Node2D = $"../../.."
+@onready var audio_stream_player: AudioStreamPlayer2D = $AudioStreamPlayer
+
+@export var audio_clips : Array[AudioStream]
 
 var player_id := 0
 var active := true:
@@ -35,6 +38,7 @@ func _process(delta: float) -> void:
 		if !done_action and buffer_action != "":
 			main.player_move()
 			player_move(buffer_action)
+			play_audio()
 			buffer_action = ""
 	else:
 		buffer_action = ""
@@ -68,3 +72,7 @@ func move_anim(vector_change):
 	tween.tween_property(self,"position",position + vector_change,0.1)
 	await tween.finished
 	done_action = false
+
+func play_audio():
+	audio_stream_player.stream = audio_clips[randi() % len(audio_clips)]
+	audio_stream_player.play()

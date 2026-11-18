@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dyt4xo1kinyxp"]
 
 [ext_resource type="Script" uid="uid://bdtcgoc85go2c" path="res://scenes/interactables/interactables.gd" id="1_5ib7w"]
+[ext_resource type="AudioStream" uid="uid://cp5d2h1ph22vl" path="res://assets/audio/sfx/swish-5.wav" id="2_752rw"]
 
 [node name="Interactables" type="Area2D" unique_id=1655735542]
 script = ExtResource("1_5ib7w")
@@ -10,3 +11,6 @@ script = ExtResource("1_5ib7w")
 [node name="SpriteHolder" type="Node2D" parent="." unique_id=366589474]
 
 [node name="Sprite2D" type="Sprite2D" parent="SpriteHolder" unique_id=1448782445]
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1354276645]
+stream = ExtResource("2_752rw")
