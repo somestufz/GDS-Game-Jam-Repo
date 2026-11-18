@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://c0dp7nsxo7cn6"]
+
+[ext_resource type="Script" uid="uid://cb5eggligcchk" path="res://scenes/UI/level_container.gd" id="1_087d6"]
+
+[node name="LevelContainer" type="PanelContainer" unique_id=913483888]
+custom_minimum_size = Vector2(220, 220)
+offset_right = 120.0
+offset_bottom = 120.0
+mouse_default_cursor_shape = 2
+script = ExtResource("1_087d6")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=908159550]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=830362171]
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.48028475, 0.7267993, 0.9669476, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1166751813]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.24115604, 0.24115604, 0.24115604, 1)
+theme_override_constants/outline_size = 19
+theme_override_font_sizes/font_size = 72
+text = "1"
+horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
