@@ -15,3 +15,5 @@ export_credentials.cfg
 data_*/
 mono_crash.*.json
 Main/Sokoban/scenes/main/level_tutorial_horse.tscn
+Main/Sokoban/scenes/main/levels/level_horse_2.tscn
+Main/Sokoban/scenes/main/levels/level_horse_2.tscn

@@ -24,6 +24,9 @@ func _process(delta: float) -> void:
 func player_entered(body : Node2D) -> void:
 	pressed = true
 	pressed_counter += 1
+	
+	#play_audio()
+
 
 func item_entered(body : Node2D) -> void:
 	pressed = true
@@ -42,8 +45,6 @@ func item_exit(body : Node2D) -> void:
 func _on_block_area_body_entered(body: Node2D) -> void:
 	if body is Entity:
 		blocking_counter += 1
-		play_audio()
-
 func _on_block_area_body_exited(body: Node2D) -> void:
 	if body is Entity:
 		blocking_counter -= 1
