@@ -11,3 +11,6 @@ func unlock() -> void:
 
 func move_anim(vector_change):
 	pass
+
+func push_extra_check(collider):
+	return false

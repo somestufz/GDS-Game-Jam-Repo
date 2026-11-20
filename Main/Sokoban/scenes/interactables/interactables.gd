@@ -2,6 +2,7 @@ class_name Interactable
 extends Area2D
 
 var tile_size = 100
+@onready var audio_player: AudioStreamPlayer2D = $AudioPlayer
 
 func _ready() -> void:
 	body_entered.connect(body_entered_interact)
@@ -30,3 +31,6 @@ func player_exit(body : Node2D) -> void:
 
 func item_exit(body : Node2D) -> void:
 	pass
+
+func play_audio():
+	audio_player.play()
