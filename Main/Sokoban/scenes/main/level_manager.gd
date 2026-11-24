@@ -20,6 +20,9 @@ func _process(delta: float) -> void:
 	if Globals.end_zone_count == Globals.end_zone_total and ui.current_menu == "Game":
 		current_level_id += 1
 		load_to_level(current_level_id)
+	
+	if Input.is_action_just_pressed("restart"):
+		load_to_level(current_level_id)
 
 func load_to_level(id : int) -> void:
 	print("loading to " + str(id))
