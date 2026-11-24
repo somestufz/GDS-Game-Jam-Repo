@@ -6,7 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://c0dp7nsxo7cn6" path="res://scenes/UI/level_container.tscn" id="4_owlbh"]
 [ext_resource type="Script" uid="uid://dov67a4moryo0" path="res://scenes/UI/main_menu.gd" id="5_c5elv"]
 [ext_resource type="Script" uid="uid://bidttpsii63gi" path="res://scenes/UI/pause.gd" id="6_cketn"]
+[ext_resource type="Script" uid="uid://b8of7ogw6pb24" path="res://scenes/UI/key_binds.gd" id="6_tpnoy"]
 [ext_resource type="Script" uid="uid://bk56yovnatqx6" path="res://scenes/UI/win.gd" id="7_64obo"]
+[ext_resource type="PackedScene" uid="uid://ce14wjvt1yuld" path="res://scenes/UI/keybind.tscn" id="7_vb61p"]
 
 [sub_resource type="Animation" id="Animation_35jxk"]
 length = 0.001
@@ -74,6 +76,7 @@ grow_vertical = 2
 script = ExtResource("1_35jxk")
 
 [node name="LevelSelect" type="HBoxContainer" parent="." unique_id=895562864]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -114,6 +117,7 @@ text = "Back
 "
 
 [node name="MainMenu" type="VBoxContainer" parent="." unique_id=706937317]
+visible = false
 custom_minimum_size = Vector2(1500, 1000)
 layout_mode = 1
 anchors_preset = 8
@@ -178,7 +182,48 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 93
 text = "Settings"
 
+[node name="Settings" type="HBoxContainer" parent="." unique_id=1803215832]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="KeyBinds Margin" type="MarginContainer" parent="Settings" unique_id=562373738]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="KeyBinds" type="VBoxContainer" parent="Settings/KeyBinds Margin" unique_id=24750784]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("6_tpnoy")
+keybind = ExtResource("7_vb61p")
+
+[node name="Label" type="Label" parent="Settings/KeyBinds Margin/KeyBinds" unique_id=146063819]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Key Binds"
+
+[node name="Misc Margin" type="MarginContainer" parent="Settings" unique_id=2124376931]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Misc" type="VBoxContainer" parent="Settings/Misc Margin" unique_id=1733661380]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="Settings/Misc Margin/Misc" unique_id=981670819]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Misc"
+
 [node name="Pause" type="VBoxContainer" parent="." unique_id=404522495]
+visible = false
 custom_minimum_size = Vector2(1500, 1000)
 layout_mode = 1
 anchors_preset = 8
@@ -246,6 +291,7 @@ theme_override_font_sizes/font_size = 93
 text = "Main Menu"
 
 [node name="Win" type="VBoxContainer" parent="." unique_id=392261918]
+visible = false
 custom_minimum_size = Vector2(1500, 1000)
 layout_mode = 1
 anchors_preset = 8
