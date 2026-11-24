@@ -18,11 +18,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	#print(Globals.end_zone_count, "/", Globals.end_zone_total)
 	if Globals.end_zone_count == Globals.end_zone_total and ui.current_menu == "Game":
-		current_level_id += 1
-		load_to_level(current_level_id)
+		ui.set_current_menu("Win")
 	
 	if Input.is_action_just_pressed("restart"):
-		load_to_level(current_level_id)
+		reload_level()
 
 func load_to_level(id : int) -> void:
 	print("loading to " + str(id))
@@ -35,6 +34,13 @@ func load_to_level(id : int) -> void:
 	var level_scene_instance = level_scene.instantiate()
 	add_child(level_scene_instance)
 	current_level = level_scene_instance
+
+func load_next_level() -> void:
+	current_level_id += 1
+	load_to_level(current_level_id)
+
+func reload_level() -> void:
+	load_to_level(current_level_id)
 
 func deload() -> void:
 	print("deloading level")
