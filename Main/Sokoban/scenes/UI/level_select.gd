@@ -5,6 +5,6 @@ extends HBoxContainer
 
 func _on_back_pressed() -> void:
 	if level_manager.current_level_id == -1:
-		ui.set_current_menu("MainMenu")
+		ui.animate_to_menu("MainMenu")
 	else:
-		ui.set_current_menu("Pause")
+		ui.animate_to_menu("Pause")

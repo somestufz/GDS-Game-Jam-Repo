@@ -8,6 +8,60 @@
 [ext_resource type="Script" uid="uid://bidttpsii63gi" path="res://scenes/UI/pause.gd" id="6_cketn"]
 [ext_resource type="Script" uid="uid://bk56yovnatqx6" path="res://scenes/UI/win.gd" id="7_64obo"]
 
+[sub_resource type="Animation" id="Animation_35jxk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1951.0004, -13)]
+}
+
+[sub_resource type="Animation" id="Animation_tpnoy"]
+resource_name = "in"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(31, -553), Vector2(-1663, -553)]
+}
+
+[sub_resource type="Animation" id="Animation_vb61p"]
+resource_name = "out"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1663, -553), Vector2(-4287, -553)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_owlbh"]
+_data = {
+&"RESET": SubResource("Animation_35jxk"),
+&"in": SubResource("Animation_tpnoy"),
+&"out": SubResource("Animation_vb61p")
+}
+
 [node name="UI" type="Control" unique_id=1903237463]
 layout_mode = 3
 anchors_preset = 8
@@ -263,6 +317,24 @@ text = "Main Menu"
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Transition" type="AnimationPlayer" parent="." unique_id=2044096890]
+libraries/ = SubResource("AnimationLibrary_owlbh")
+
+[node name="ColorRect" type="ColorRect" parent="Transition" unique_id=691534597]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 991.00037
+offset_top = -553.0
+offset_right = 3381.253
+offset_bottom = 1991.8188
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.49429923
+color = Color(0, 0, 0, 1)
 
 [connection signal="pressed" from="LevelSelect/MarginContainer/Back" to="LevelSelect" method="_on_back_pressed"]
 [connection signal="pressed" from="MainMenu/StartContainer/StartSelect" to="MainMenu" method="_on_start_select_pressed"]
