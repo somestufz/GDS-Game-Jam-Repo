@@ -1,0 +1,275 @@
+[gd_scene format=3 uid="uid://b5m7y1o1clfwm"]
+
+[ext_resource type="Script" uid="uid://du2uagds7obvc" path="res://scenes/UI/ui_controller.gd" id="1_35jxk"]
+[ext_resource type="Script" uid="uid://b4pff3cwjlqu3" path="res://scenes/UI/level_select.gd" id="2_tpnoy"]
+[ext_resource type="Script" uid="uid://bboa8jfbcitbl" path="res://scenes/UI/level_grid.gd" id="3_vb61p"]
+[ext_resource type="PackedScene" uid="uid://c0dp7nsxo7cn6" path="res://scenes/UI/level_container.tscn" id="4_owlbh"]
+[ext_resource type="Script" uid="uid://dov67a4moryo0" path="res://scenes/UI/main_menu.gd" id="5_c5elv"]
+[ext_resource type="Script" uid="uid://bidttpsii63gi" path="res://scenes/UI/pause.gd" id="6_cketn"]
+[ext_resource type="Script" uid="uid://bk56yovnatqx6" path="res://scenes/UI/win.gd" id="7_64obo"]
+
+[node name="UI" type="Control" unique_id=1903237463]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_35jxk")
+
+[node name="LevelSelect" type="HBoxContainer" parent="." unique_id=895562864]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -750.0
+offset_top = -500.0
+offset_right = 750.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_tpnoy")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="LevelSelect" unique_id=1932812649]
+custom_minimum_size = Vector2(1300, 1000)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="level_grid" type="GridContainer" parent="LevelSelect/ScrollContainer" unique_id=1902528858]
+layout_mode = 2
+columns = 5
+script = ExtResource("3_vb61p")
+level_container = ExtResource("4_owlbh")
+
+[node name="MarginContainer" type="MarginContainer" parent="LevelSelect" unique_id=1904577639]
+layout_mode = 2
+theme_override_constants/margin_left = 120
+
+[node name="Back" type="Button" parent="LevelSelect/MarginContainer" unique_id=1035380231]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 78
+text = "Back
+"
+
+[node name="MainMenu" type="VBoxContainer" parent="." unique_id=706937317]
+custom_minimum_size = Vector2(1500, 1000)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -500.0
+offset_right = 500.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_c5elv")
+
+[node name="Label" type="Label" parent="MainMenu" unique_id=1165392208]
+custom_minimum_size = Vector2(1500, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 94
+text = "Currently Unnamed Sokoban Game Where You Can Switch Characters"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="StartContainer" type="MarginContainer" parent="MainMenu" unique_id=1882826908]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="StartSelect" type="Button" parent="MainMenu/StartContainer" unique_id=706821730]
+custom_minimum_size = Vector2(1000, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 93
+text = "Start"
+
+[node name="LevelSelectContainer" type="MarginContainer" parent="MainMenu" unique_id=752244055]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="LevelSelect" type="Button" parent="MainMenu/LevelSelectContainer" unique_id=2106649799]
+custom_minimum_size = Vector2(1000, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 93
+text = "Level Select
+"
+
+[node name="SettingsContainer" type="MarginContainer" parent="MainMenu" unique_id=989020587]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Settings" type="Button" parent="MainMenu/SettingsContainer" unique_id=180238216]
+custom_minimum_size = Vector2(1000, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 93
+text = "Settings"
+
+[node name="Pause" type="VBoxContainer" parent="." unique_id=404522495]
+custom_minimum_size = Vector2(1500, 1000)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -500.0
+offset_right = 500.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+script = ExtResource("6_cketn")
+
+[node name="Label" type="Label" parent="Pause" unique_id=2010098178]
+custom_minimum_size = Vector2(1500, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 231
+text = "Paused"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ResumeContainer" type="MarginContainer" parent="Pause" unique_id=1074904312]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Resume" type="Button" parent="Pause/ResumeContainer" unique_id=18109348]
+custom_minimum_size = Vector2(1000, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 93
+text = "Resume
+"
+
+[node name="LevelSelectContainer" type="MarginContainer" parent="Pause" unique_id=1134851379]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="LevelSelect" type="Button" parent="Pause/LevelSelectContainer" unique_id=1189766180]
+custom_minimum_size = Vector2(1000, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 93
+text = "Level Select
+"
+
+[node name="MenuContainer" type="MarginContainer" parent="Pause" unique_id=2076617735]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Main Menu" type="Button" parent="Pause/MenuContainer" unique_id=451439306]
+custom_minimum_size = Vector2(1000, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 93
+text = "Main Menu"
+
+[node name="Win" type="VBoxContainer" parent="." unique_id=392261918]
+custom_minimum_size = Vector2(1500, 1000)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -500.0
+offset_right = 500.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+script = ExtResource("7_64obo")
+
+[node name="Label" type="Label" parent="Win" unique_id=187797795]
+custom_minimum_size = Vector2(1500, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 172
+text = "Level Complete!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="NextContainer" type="MarginContainer" parent="Win" unique_id=1676965151]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Next" type="Button" parent="Win/NextContainer" unique_id=890269315]
+custom_minimum_size = Vector2(1000, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 93
+text = "Next Level
+
+"
+
+[node name="LevelSelectContainer" type="MarginContainer" parent="Win" unique_id=1916826132]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Restart" type="Button" parent="Win/LevelSelectContainer" unique_id=90714590]
+custom_minimum_size = Vector2(1000, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 93
+text = "Restart
+"
+
+[node name="MenuContainer" type="MarginContainer" parent="Win" unique_id=1657517711]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Main Menu" type="Button" parent="Win/MenuContainer" unique_id=166976313]
+custom_minimum_size = Vector2(1000, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 93
+text = "Main Menu"
+
+[node name="Game" type="Control" parent="." unique_id=1861119261]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="LevelSelect/MarginContainer/Back" to="LevelSelect" method="_on_back_pressed"]
+[connection signal="pressed" from="MainMenu/StartContainer/StartSelect" to="MainMenu" method="_on_start_select_pressed"]
+[connection signal="pressed" from="MainMenu/LevelSelectContainer/LevelSelect" to="MainMenu" method="_on_level_select_pressed"]
+[connection signal="pressed" from="Pause/ResumeContainer/Resume" to="Pause" method="_on_resume_pressed"]
+[connection signal="pressed" from="Pause/LevelSelectContainer/LevelSelect" to="Pause" method="_on_level_select_pressed"]
+[connection signal="pressed" from="Pause/MenuContainer/Main Menu" to="Pause" method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Win/NextContainer/Next" to="Win" method="_on_next_pressed"]
+[connection signal="pressed" from="Win/LevelSelectContainer/Restart" to="Win" method="_on_restart_pressed"]
+[connection signal="pressed" from="Win/MenuContainer/Main Menu" to="Win" method="_on_main_menu_pressed"]
