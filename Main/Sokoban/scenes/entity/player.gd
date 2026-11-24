@@ -6,6 +6,7 @@ extends Entity
 @onready var ray: RayCast2D = $RayDown
 @onready var main : Node2D = $"../../.."
 @onready var audio_stream_player: AudioStreamPlayer2D = $AudioStreamPlayer
+@onready var collision: CollisionShape2D = $CollisionShape2D
 
 @export var audio_clips : Array[AudioStream]
 
@@ -68,10 +69,12 @@ func player_action(collider, dir, vector_change) -> void:
 
 func move_anim(vector_change):
 	done_action = true
+	collision.disabled = true
 	var tween = get_tree().create_tween()
 	tween.tween_property(self,"position",position + vector_change,0.1)
 	await tween.finished
 	done_action = false
+	collision.disabled = false
 
 func play_audio():
 	pass
