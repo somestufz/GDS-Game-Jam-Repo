@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bboa8jfbcitbl" path="res://scenes/UI/level_grid.gd" id="2_ma5rq"]
 [ext_resource type="PackedScene" uid="uid://c0dp7nsxo7cn6" path="res://scenes/UI/level_container.tscn" id="3_e3dby"]
 [ext_resource type="Script" uid="uid://bidttpsii63gi" path="res://scenes/UI/pause.gd" id="6_0rn35"]
+[ext_resource type="Script" uid="uid://bk56yovnatqx6" path="res://scenes/UI/win.gd" id="8_kjrfb"]
 
 [node name="game" type="Node2D" unique_id=833251232]
 
@@ -199,6 +200,74 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 93
 text = "Main Menu"
 
+[node name="Win" type="VBoxContainer" parent="UI" unique_id=458656889]
+custom_minimum_size = Vector2(1500, 1000)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -500.0
+offset_right = 500.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+script = ExtResource("8_kjrfb")
+
+[node name="Label" type="Label" parent="UI/Win" unique_id=2031472953]
+custom_minimum_size = Vector2(1500, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 172
+text = "Level Complete!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="NextContainer" type="MarginContainer" parent="UI/Win" unique_id=44415272]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Next" type="Button" parent="UI/Win/NextContainer" unique_id=637758383]
+custom_minimum_size = Vector2(1000, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 93
+text = "Next Level
+
+"
+
+[node name="LevelSelectContainer" type="MarginContainer" parent="UI/Win" unique_id=1382545368]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Restart" type="Button" parent="UI/Win/LevelSelectContainer" unique_id=1600001752]
+custom_minimum_size = Vector2(1000, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 93
+text = "Restart
+"
+
+[node name="MenuContainer" type="MarginContainer" parent="UI/Win" unique_id=1013862337]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Main Menu" type="Button" parent="UI/Win/MenuContainer" unique_id=47630027]
+custom_minimum_size = Vector2(1000, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 93
+text = "Main Menu"
+
 [node name="Game" type="Control" parent="UI" unique_id=117733573]
 anchors_preset = 0
 offset_right = 40.0
@@ -210,3 +279,6 @@ offset_bottom = 40.0
 [connection signal="pressed" from="UI/Pause/ResumeContainer/Resume" to="UI/Pause" method="_on_resume_pressed"]
 [connection signal="pressed" from="UI/Pause/LevelSelectContainer/LevelSelect" to="UI/Pause" method="_on_level_select_pressed"]
 [connection signal="pressed" from="UI/Pause/MenuContainer/Main Menu" to="UI/Pause" method="_on_main_menu_pressed"]
+[connection signal="pressed" from="UI/Win/NextContainer/Next" to="UI/Win" method="_on_next_pressed"]
+[connection signal="pressed" from="UI/Win/LevelSelectContainer/Restart" to="UI/Win" method="_on_restart_pressed"]
+[connection signal="pressed" from="UI/Win/MenuContainer/Main Menu" to="UI/Win" method="_on_main_menu_pressed"]
