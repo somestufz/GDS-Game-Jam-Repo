@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://ce14wjvt1yuld"]
+
+[ext_resource type="Script" uid="uid://c0d5px6gbxlo5" path="res://scenes/UI/keybind.gd" id="1_xvfpn"]
+
+[node name="Keybind" type="MarginContainer" unique_id=825738221]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+script = ExtResource("1_xvfpn")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1439878829]
+layout_mode = 2
+color = Color(0.20152658, 0.20152658, 0.20152658, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2007071659]
+layout_mode = 2
+
+[node name="LabelContainer" type="MarginContainer" parent="HBoxContainer" unique_id=1670022407]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="HBoxContainer/LabelContainer" unique_id=1301316940]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "move_left"
+
+[node name="Button 1" type="MarginContainer" parent="HBoxContainer" unique_id=138010822]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Button" type="Button" parent="HBoxContainer/Button 1" unique_id=682114147]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "-"
+
+[node name="Button 2" type="MarginContainer" parent="HBoxContainer" unique_id=2088641253]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Button" type="Button" parent="HBoxContainer/Button 2" unique_id=1833379847]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "-"
+
+[connection signal="pressed" from="HBoxContainer/Button 1/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button 2/Button" to="." method="_on_button_2_pressed"]
