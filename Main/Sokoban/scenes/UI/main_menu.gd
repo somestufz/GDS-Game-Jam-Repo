@@ -1,7 +1,7 @@
 extends VBoxContainer
 
 @onready var ui: Control = $".."
-@onready var level_manager: LevelManager = $"../../LevelManager"
+@onready var level_manager: LevelManager = $"../../../LevelManager"
 
 func _on_level_select_pressed() -> void:
 	ui.animate_to_menu("LevelSelect")

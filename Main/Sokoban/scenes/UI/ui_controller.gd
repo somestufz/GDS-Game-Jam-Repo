@@ -2,7 +2,7 @@ extends Control
 
 var current_menu := "MainMenu"
 
-@onready var level_manager: LevelManager = $"../LevelManager"
+@onready var level_manager: LevelManager = $"../../LevelManager"
 @onready var transition: AnimationPlayer = $Transition
 
 func _ready() -> void:
@@ -29,6 +29,6 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		print(current_menu)
 		if current_menu == "Game":
-			set_current_menu("Pause")
+			animate_to_menu("Pause")
 		elif level_manager.current_level_id != -1:
-			set_current_menu("Game")
+			animate_to_menu("Game")

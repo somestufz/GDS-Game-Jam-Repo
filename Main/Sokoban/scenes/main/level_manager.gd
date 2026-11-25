@@ -4,7 +4,7 @@ extends Node2D
 var current_level : Node2D
 var current_level_id : int = -1
 
-@onready var ui: Control = $"../UI"
+@onready var ui: Control = $"../CanvasLayer/UI"
 
 @export var level_names : Array[String] = [
 	"res://scenes/main/levels/level_horse_1.tscn",

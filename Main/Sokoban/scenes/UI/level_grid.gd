@@ -1,6 +1,6 @@
 extends GridContainer
 
-@onready var level_manager: LevelManager = $"../../../../LevelManager"
+@onready var level_manager: LevelManager = $"../../../../../LevelManager"
 @onready var ui: Control = $"../../.."
 
 @export var level_container: PackedScene
@@ -16,5 +16,5 @@ func _ready() -> void:
 		id += 1
 
 func _on_level_selected(id):
-	ui.set_current_menu("Game")
+	ui.animate_to_menu("Game")
 	level_manager.load_to_level(id)
