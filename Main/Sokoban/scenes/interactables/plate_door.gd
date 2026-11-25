@@ -15,7 +15,7 @@ var blocking_counter := 0
 func _ready() -> void:
 	super()
 	door_joint.position = door_offset * tile_size
-	door.rotation_degrees = door_rotation
+	door_joint.rotation_degrees = door_rotation
 
 func _process(delta: float) -> void:
 	door.position = lerp(door.position,Vector2(0,1 * clamp(pressed_counter + blocking_counter,0,1) * tile_size),delta * 8.0)
