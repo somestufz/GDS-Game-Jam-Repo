@@ -49,6 +49,8 @@ text = "Quick tutorial :
 
 The goal is to get all the animals in the end zone.
 
+There's a horse who seems eager to get started.
+
 Try pushing some boxes with the horse!
 "
 label_settings = SubResource("LabelSettings_llcc8")

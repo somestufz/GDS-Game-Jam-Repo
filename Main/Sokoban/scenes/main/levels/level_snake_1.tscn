@@ -47,6 +47,9 @@ offset_bottom = 286.0
 layout_mode = 2
 text = "Quick tutorial :
 
-Try pulling some boxes with the snake!
+A snake has appeared!
+
+Snakes are great at pulling boxes,
+give it a try!
 "
 label_settings = SubResource("LabelSettings_sqpx0")
