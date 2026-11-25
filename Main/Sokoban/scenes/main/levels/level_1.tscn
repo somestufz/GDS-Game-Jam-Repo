@@ -17,26 +17,19 @@
 position = Vector2(450, 750)
 door_offset = Vector2(4, -4)
 
-[node name="EndZone" parent="Entities/Interactables" parent_id_path=PackedInt32Array(1227834798) index="1" unique_id=1493697998 instance=ExtResource("3_jgiix")]
+[node name="PlateDoor2" parent="Entities/Interactables" parent_id_path=PackedInt32Array(1227834798) index="1" unique_id=1332073700 instance=ExtResource("2_y0l5x")]
+position = Vector2(1150, 550)
+door_offset = Vector2(3, 0)
+door_rotation = 90
+
+[node name="EndZone" parent="Entities/Interactables" parent_id_path=PackedInt32Array(1227834798) index="2" unique_id=1493697998 instance=ExtResource("3_jgiix")]
 position = Vector2(1150, 850)
 
-[node name="EndZone2" parent="Entities/Interactables" parent_id_path=PackedInt32Array(1227834798) index="2" unique_id=1739368729 instance=ExtResource("3_jgiix")]
+[node name="EndZone2" parent="Entities/Interactables" parent_id_path=PackedInt32Array(1227834798) index="3" unique_id=1739368729 instance=ExtResource("3_jgiix")]
 position = Vector2(1250, 850)
 
-[node name="EndZone3" parent="Entities/Interactables" parent_id_path=PackedInt32Array(1227834798) index="3" unique_id=1015183155 instance=ExtResource("3_jgiix")]
+[node name="EndZone3" parent="Entities/Interactables" parent_id_path=PackedInt32Array(1227834798) index="4" unique_id=1015183155 instance=ExtResource("3_jgiix")]
 position = Vector2(1350, 850)
-
-[node name="Horse" parent="Entities/Players" parent_id_path=PackedInt32Array(569333621) index="0" unique_id=540745152 instance=ExtResource("4_vycae")]
-position = Vector2(350, 250)
-
-[node name="Snake" parent="Entities/Players" parent_id_path=PackedInt32Array(569333621) index="1" unique_id=1461206000 instance=ExtResource("5_41m8q")]
-position = Vector2(1250, 750)
-
-[node name="Chamaeleon" parent="Entities/Players" parent_id_path=PackedInt32Array(569333621) index="2" unique_id=157653865 instance=ExtResource("6_w1ux2")]
-position = Vector2(1350, 250)
-
-[node name="Kangaroo" parent="Entities/Players" parent_id_path=PackedInt32Array(569333621) index="3" unique_id=374969225 instance=ExtResource("7_w1ux2")]
-position = Vector2(350, 850)
 
 [node name="Box" parent="Entities/Items" parent_id_path=PackedInt32Array(115791320) index="0" unique_id=873593554 instance=ExtResource("7_jgiix")]
 position = Vector2(550, 350)
@@ -52,3 +45,15 @@ position = Vector2(750, 350)
 
 [node name="LockedDoor2" parent="Entities/Items" parent_id_path=PackedInt32Array(115791320) index="4" unique_id=633986252 instance=ExtResource("9_41m8q")]
 position = Vector2(650, 650)
+
+[node name="Horse" parent="Entities/Players" parent_id_path=PackedInt32Array(569333621) index="0" unique_id=540745152 instance=ExtResource("4_vycae")]
+position = Vector2(350, 250)
+
+[node name="Snake" parent="Entities/Players" parent_id_path=PackedInt32Array(569333621) index="1" unique_id=1461206000 instance=ExtResource("5_41m8q")]
+position = Vector2(1250, 750)
+
+[node name="Chamaeleon" parent="Entities/Players" parent_id_path=PackedInt32Array(569333621) index="2" unique_id=157653865 instance=ExtResource("6_w1ux2")]
+position = Vector2(1350, 250)
+
+[node name="Kangaroo" parent="Entities/Players" parent_id_path=PackedInt32Array(569333621) index="3" unique_id=374969225 instance=ExtResource("7_w1ux2")]
+position = Vector2(350, 850)
