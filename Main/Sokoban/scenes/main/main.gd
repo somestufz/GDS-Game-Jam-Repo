@@ -59,6 +59,8 @@ func update_location_dictionary() -> Dictionary:
 	for player in players.get_children():
 		player = player as CharacterBody2D
 		location_dictionary[player] = player.position
+		
+		
 	
 	for item in items.get_children():
 		item = item as CharacterBody2D
@@ -68,6 +70,8 @@ func update_location_dictionary() -> Dictionary:
 func load_location_dictionary(dict : Dictionary) -> void:
 	for entity in dict.keys():
 		entity.position = dict[entity]
+		
+		
 
 func player_move() -> void:
 	turn_number += 1
