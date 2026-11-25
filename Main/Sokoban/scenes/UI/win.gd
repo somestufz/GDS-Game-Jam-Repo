@@ -1,7 +1,7 @@
 extends VBoxContainer
 
 @onready var ui: Control = $".."
-@onready var level_manager: LevelManager = $"../../LevelManager"
+@onready var level_manager: LevelManager = $"../../../LevelManager"
 
 
 func _on_next_pressed() -> void:
