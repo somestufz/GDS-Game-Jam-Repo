@@ -48,3 +48,6 @@ position = Vector2(1050, 350)
 
 [node name="Box10" parent="Entities/Items" parent_id_path=PackedInt32Array(115791320) index="9" unique_id=1392298608 instance=ExtResource("3_sy4fo")]
 position = Vector2(1050, 550)
+
+[node name="Label" parent="TemporaryTutorial/BottomLeft/VBoxContainer" parent_id_path=PackedInt32Array(252287454) index="0" unique_id=1093022684]
+text = ""
