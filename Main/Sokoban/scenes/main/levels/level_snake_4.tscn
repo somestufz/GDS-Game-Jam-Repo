@@ -18,6 +18,9 @@ tile_map_data = PackedByteArray("AAAAAAAAAQAAAAEAAAAAAAEAAQAAAAEAAAAAAAIAAQAAAAE
 position = Vector2(850, 450)
 door_offset = Vector2(1, 1)
 
+[node name="EndZone" parent="Entities/Interactables" parent_id_path=PackedInt32Array(1227834798) index="1" unique_id=1238718382 instance=ExtResource("8_ta77g")]
+position = Vector2(1350, 850)
+
 [node name="Horse" parent="Entities/Players" parent_id_path=PackedInt32Array(569333621) index="0" unique_id=540745152 instance=ExtResource("3_j4wwd")]
 position = Vector2(550, 750)
 
@@ -41,9 +44,6 @@ position = Vector2(1350, 550)
 
 [node name="LockedDoor" parent="Entities/Items" parent_id_path=PackedInt32Array(115791320) index="5" unique_id=433911848 instance=ExtResource("7_wvqd5")]
 position = Vector2(1250, 650)
-
-[node name="EndZone" parent="Entities" parent_id_path=PackedInt32Array(722408137) index="3" unique_id=1238718382 instance=ExtResource("8_ta77g")]
-position = Vector2(1350, 850)
 
 [node name="Camera2D" parent="." index="3" unique_id=1970743919]
 position = Vector2(1045, 595)
