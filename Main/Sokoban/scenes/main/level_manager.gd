@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 	if Globals.end_zone_count == Globals.end_zone_total and ui.current_menu == "Game":
 		ui.set_current_menu("Win")
 	
-	if Input.is_action_just_pressed("restart"):
+	if Input.is_action_just_pressed("restart") and ui.current_menu == "Game":
 		reload_level()
 
 func load_to_level(id : int) -> void:
