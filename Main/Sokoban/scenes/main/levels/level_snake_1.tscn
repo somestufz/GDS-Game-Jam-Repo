@@ -4,6 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://byhvj73qsecs3" path="res://scenes/entity/snake.tscn" id="2_e4nol"]
 [ext_resource type="PackedScene" uid="uid://clpdks2dsn0h8" path="res://scenes/entity/box.tscn" id="3_sqpx0"]
 [ext_resource type="PackedScene" uid="uid://dsjphmga78ryh" path="res://scenes/interactables/end_zone.tscn" id="4_647xj"]
+[ext_resource type="Script" uid="uid://6uw8euyvey18" path="res://scenes/main/levels/temporary_tutorial.gd" id="5_e4nol"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sqpx0"]
+font_size = 24
 
 [node name="Level_snake_1" unique_id=1366407638 instance=ExtResource("1_e7422")]
 
@@ -21,3 +25,31 @@ position = Vector2(750, 350)
 
 [node name="Box2" parent="Entities/Items" parent_id_path=PackedInt32Array(115791320) index="1" unique_id=884026375 instance=ExtResource("3_sqpx0")]
 position = Vector2(950, 350)
+
+[node name="TemporaryTutorial" type="CanvasLayer" parent="." index="4" unique_id=1860086854]
+script = ExtResource("5_e4nol")
+
+[node name="BottomLeft" type="Control" parent="TemporaryTutorial" index="0" unique_id=1274217463]
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TemporaryTutorial/BottomLeft" index="0" unique_id=2377517]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 78.0
+offset_right = 382.0
+offset_bottom = 286.0
+
+[node name="Label" type="Label" parent="TemporaryTutorial/BottomLeft/VBoxContainer" index="0" unique_id=1452728277]
+layout_mode = 2
+text = "Quick tutorial :
+
+A snake has appeared!
+
+Snakes are great at pulling boxes,
+give it a try!
+"
+label_settings = SubResource("LabelSettings_sqpx0")

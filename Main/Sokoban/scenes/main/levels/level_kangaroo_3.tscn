@@ -29,6 +29,12 @@ position = Vector2(1050, 750)
 door_offset = Vector2(6, -3)
 door_rotation = 90
 
+[node name="EndZone" parent="Entities/Interactables" parent_id_path=PackedInt32Array(1227834798) index="3" unique_id=1238718382 instance=ExtResource("8_rmoty")]
+position = Vector2(1450, 150)
+
+[node name="EndZone2" parent="Entities/Interactables" parent_id_path=PackedInt32Array(1227834798) index="4" unique_id=627226708 instance=ExtResource("8_rmoty")]
+position = Vector2(1150, 150)
+
 [node name="Horse" parent="Entities/Players" parent_id_path=PackedInt32Array(569333621) index="0" unique_id=540745152 instance=ExtResource("3_jqo40")]
 position = Vector2(550, 650)
 
@@ -49,12 +55,6 @@ position = Vector2(1350, 550)
 
 [node name="LockedDoor" parent="Entities/Items" parent_id_path=PackedInt32Array(115791320) index="4" unique_id=433911848 instance=ExtResource("7_qbydr")]
 position = Vector2(1250, 650)
-
-[node name="EndZone" parent="Entities" parent_id_path=PackedInt32Array(722408137) index="3" unique_id=1238718382 instance=ExtResource("8_rmoty")]
-position = Vector2(1450, 150)
-
-[node name="EndZone2" parent="Entities" parent_id_path=PackedInt32Array(722408137) index="4" unique_id=627226708 instance=ExtResource("8_rmoty")]
-position = Vector2(1150, 150)
 
 [node name="Camera2D" parent="." index="3" unique_id=1970743919]
 position = Vector2(1185, 412)

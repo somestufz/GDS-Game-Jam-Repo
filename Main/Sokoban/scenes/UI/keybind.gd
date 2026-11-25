@@ -35,12 +35,12 @@ func _input(event: InputEvent) -> void:
 			#swap out the binding
 			InputMap.action_erase_events(action)
 			InputMap.action_add_event(action, events[0])
-			if events.size():
+			if events.size() > 1:
 				InputMap.action_add_event(action, events[1])
 			#Sets the buttons text
-			button_1.text = events[0].as_text()
+			button_1.text = events[0].as_text().replace(" - Physical", "")
 			if events.size() > 1:
-				button_2.text = events[1].as_text()
+				button_2.text = events[1].as_text().replace(" - Physical", "")
 			isListening1 = false
 		elif isListening2:
 			var events = InputMap.action_get_events(action)
@@ -53,7 +53,6 @@ func _input(event: InputEvent) -> void:
 			InputMap.action_add_event(action, events[0])
 			InputMap.action_add_event(action, events[1])
 			#Sets the buttons text
-			button_1.text = events[0].as_text()
-			if events.size() > 1:
-				button_2.text = events[1].as_text()
-			isListening1 = false
+			button_1.text = events[0].as_text().replace(" - Physical", "")
+			button_2.text = events[1].as_text().replace(" - Physical", "")
+			isListening2 = false

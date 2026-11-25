@@ -4,6 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://dsjphmga78ryh" path="res://scenes/interactables/end_zone.tscn" id="2_hynky"]
 [ext_resource type="PackedScene" uid="uid://dpisgawlv7lhh" path="res://scenes/entity/kangaroo.tscn" id="3_f4mfx"]
 [ext_resource type="PackedScene" uid="uid://clpdks2dsn0h8" path="res://scenes/entity/box.tscn" id="4_okr00"]
+[ext_resource type="Script" uid="uid://6uw8euyvey18" path="res://scenes/main/levels/temporary_tutorial.gd" id="5_hynky"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_f4mfx"]
+font_size = 24
 
 [node name="Level_kangaroo_1" unique_id=1366407638 instance=ExtResource("1_bc8l1")]
 
@@ -24,3 +28,33 @@ position = Vector2(950, 350)
 
 [node name="Box3" parent="Entities/Items" parent_id_path=PackedInt32Array(115791320) index="2" unique_id=261732438 instance=ExtResource("4_okr00")]
 position = Vector2(1050, 350)
+
+[node name="TemporaryTutorial" type="CanvasLayer" parent="." index="4" unique_id=1212251872]
+script = ExtResource("5_hynky")
+
+[node name="BottomLeft" type="Control" parent="TemporaryTutorial" index="0" unique_id=795841571]
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TemporaryTutorial/BottomLeft" index="0" unique_id=1134396055]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 78.0
+offset_right = 382.0
+offset_bottom = 286.0
+
+[node name="Label" type="Label" parent="TemporaryTutorial/BottomLeft/VBoxContainer" index="0" unique_id=50388121]
+layout_mode = 2
+text = "Quick tutorial :
+
+This animal has too much energy, I wonder why.
+The kangaroo can only jump two spaces at a time,
+however, this means it can jump over walls
+
+The kangaroo can also push boxes on spaces it
+lands on!
+"
+label_settings = SubResource("LabelSettings_f4mfx")
