@@ -6,7 +6,6 @@
 [node name="game" type="Node2D" unique_id=833251232]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=247875225]
-zoom = Vector2(0.6, 0.6)
 
 [node name="LevelManager" parent="." unique_id=294967547 instance=ExtResource("1_e64el")]
 position = Vector2(-960, -540)
