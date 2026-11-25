@@ -35,7 +35,7 @@ func _input(event: InputEvent) -> void:
 			#swap out the binding
 			InputMap.action_erase_events(action)
 			InputMap.action_add_event(action, events[0])
-			if events.size():
+			if events.size() > 1:
 				InputMap.action_add_event(action, events[1])
 			#Sets the buttons text
 			button_1.text = events[0].as_text()
