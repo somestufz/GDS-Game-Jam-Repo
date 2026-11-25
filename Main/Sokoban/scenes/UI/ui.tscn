@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://b8of7ogw6pb24" path="res://scenes/UI/key_binds.gd" id="6_tpnoy"]
 [ext_resource type="Script" uid="uid://bk56yovnatqx6" path="res://scenes/UI/win.gd" id="7_64obo"]
 [ext_resource type="PackedScene" uid="uid://ce14wjvt1yuld" path="res://scenes/UI/keybind.tscn" id="7_vb61p"]
+[ext_resource type="Script" uid="uid://bhd8ehibunljx" path="res://scenes/UI/volume.gd" id="9_c5elv"]
+[ext_resource type="AudioStream" uid="uid://boxmu88c4bge2" path="res://assets/audio/sfx/tone.wav" id="10_cketn"]
 
 [sub_resource type="Animation" id="Animation_35jxk"]
 length = 0.001
@@ -194,6 +196,7 @@ script = ExtResource("6_owlbh")
 
 [node name="KeyBinds Margin" type="MarginContainer" parent="Settings" unique_id=562373738]
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_right = 50
 
@@ -208,6 +211,54 @@ keybind = ExtResource("7_vb61p")
 layout_mode = 2
 theme_override_font_sizes/font_size = 100
 text = "Key Binds"
+
+[node name="Settings Margin" type="MarginContainer" parent="Settings" unique_id=1431499206]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="Settings" type="VBoxContainer" parent="Settings/Settings Margin" unique_id=1370384661]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="Settings/Settings Margin/Settings" unique_id=232824304]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Settings"
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings/Settings Margin/Settings" unique_id=1478112136]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/Settings Margin/Settings/MarginContainer" unique_id=1174210889]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Settings/Settings Margin/Settings/MarginContainer/VBoxContainer" unique_id=487638261]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Volume"
+
+[node name="Volume" type="HBoxContainer" parent="Settings/Settings Margin/Settings/MarginContainer/VBoxContainer" unique_id=575123160]
+layout_mode = 2
+alignment = 1
+script = ExtResource("9_c5elv")
+
+[node name="HSlider" type="HSlider" parent="Settings/Settings Margin/Settings/MarginContainer/VBoxContainer/Volume" unique_id=21386837]
+custom_minimum_size = Vector2(350, 50)
+layout_mode = 2
+min_value = -25.0
+max_value = 25.0
+
+[node name="Label" type="Label" parent="Settings/Settings Margin/Settings/MarginContainer/VBoxContainer/Volume" unique_id=263086569]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "100%"
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Settings/Settings Margin/Settings/MarginContainer/VBoxContainer/Volume" unique_id=22466999]
+stream = ExtResource("10_cketn")
+autoplay = true
 
 [node name="MarginContainer" type="MarginContainer" parent="Settings" unique_id=2000453441]
 layout_mode = 2
@@ -387,6 +438,9 @@ color = Color(0, 0, 0, 1)
 [connection signal="pressed" from="MainMenu/StartContainer/StartSelect" to="MainMenu" method="_on_start_select_pressed"]
 [connection signal="pressed" from="MainMenu/LevelSelectContainer/LevelSelect" to="MainMenu" method="_on_level_select_pressed"]
 [connection signal="pressed" from="MainMenu/SettingsContainer/Settings" to="MainMenu" method="_on_settings_pressed"]
+[connection signal="drag_ended" from="Settings/Settings Margin/Settings/MarginContainer/VBoxContainer/Volume/HSlider" to="Settings/Settings Margin/Settings/MarginContainer/VBoxContainer/Volume" method="_on_h_slider_drag_ended"]
+[connection signal="drag_started" from="Settings/Settings Margin/Settings/MarginContainer/VBoxContainer/Volume/HSlider" to="Settings/Settings Margin/Settings/MarginContainer/VBoxContainer/Volume" method="_on_h_slider_drag_started"]
+[connection signal="value_changed" from="Settings/Settings Margin/Settings/MarginContainer/VBoxContainer/Volume/HSlider" to="Settings/Settings Margin/Settings/MarginContainer/VBoxContainer/Volume" method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="Settings/MarginContainer/Back" to="Settings" method="_on_back_pressed"]
 [connection signal="pressed" from="Pause/ResumeContainer/Resume" to="Pause" method="_on_resume_pressed"]
 [connection signal="pressed" from="Pause/LevelSelectContainer/LevelSelect" to="Pause" method="_on_level_select_pressed"]

@@ -41,6 +41,7 @@ theme_override_constants/margin_bottom = 10
 [node name="Button" type="Button" parent="HBoxContainer/Button 1" unique_id=682114147]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "-"
 
 [node name="Button 2" type="MarginContainer" parent="HBoxContainer" unique_id=2088641253]
@@ -53,6 +54,7 @@ theme_override_constants/margin_bottom = 10
 [node name="Button" type="Button" parent="HBoxContainer/Button 2" unique_id=1833379847]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "-"
 
 [connection signal="pressed" from="HBoxContainer/Button 1/Button" to="." method="_on_button_pressed"]

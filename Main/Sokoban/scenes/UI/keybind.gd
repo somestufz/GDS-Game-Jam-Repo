@@ -11,10 +11,11 @@ var isListening2 := false
 
 func initialise(action : String) -> void:
 	self.action = action
-	label.text = action
-	button_1.text = InputMap.action_get_events(action)[0].as_text()
+	var text = action.replace("_"," ").capitalize()
+	label.text = text
+	button_1.text = InputMap.action_get_events(action)[0].as_text().replace(" - Physical", "")
 	if InputMap.action_get_events(action).size() > 1:
-		button_2.text = InputMap.action_get_events(action)[1].as_text()
+		button_2.text = InputMap.action_get_events(action)[1].as_text().replace(" - Physical", "")
 
 func _on_button_pressed() -> void:
 	isListening1 = true
@@ -29,21 +30,30 @@ func _on_button_2_pressed() -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey:
 		if isListening1:
+			var events = InputMap.action_get_events(action)
+			events[0] = event
 			#swap out the binding
-			InputMap.action_erase_event(action, InputMap.action_get_events(action)[0])
-			InputMap.action_add_event(action, event)
+			InputMap.action_erase_events(action)
+			InputMap.action_add_event(action, events[0])
+			if events.size():
+				InputMap.action_add_event(action, events[1])
 			#Sets the buttons text
-			button_1.text = InputMap.action_get_events(action)[0].as_text()
-			if InputMap.action_get_events(action).size() > 1:
-				button_2.text = InputMap.action_get_events(action)[1].as_text()
+			button_1.text = events[0].as_text()
+			if events.size() > 1:
+				button_2.text = events[1].as_text()
 			isListening1 = false
 		elif isListening2:
+			var events = InputMap.action_get_events(action)
+			if events.size() == 1:
+				events.append(event)
+			else:
+				events[1] = event
 			#swap out the binding
-			if InputMap.action_get_events(action).size() > 1:
-				InputMap.action_erase_event(action, InputMap.action_get_events(action)[1])
-			InputMap.action_add_event(action, event)
+			InputMap.action_erase_events(action)
+			InputMap.action_add_event(action, events[0])
+			InputMap.action_add_event(action, events[1])
 			#Sets the buttons text
-			button_1.text = InputMap.action_get_events(action)[0].as_text()
-			if InputMap.action_get_events(action).size() > 1:
-				button_2.text = InputMap.action_get_events(action)[1].as_text()
-			isListening2 = false
+			button_1.text = events[0].as_text()
+			if events.size() > 1:
+				button_2.text = events[1].as_text()
+			isListening1 = false
