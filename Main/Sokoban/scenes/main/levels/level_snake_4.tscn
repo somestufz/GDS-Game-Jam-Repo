@@ -46,4 +46,4 @@ position = Vector2(1250, 650)
 position = Vector2(1350, 850)
 
 [node name="Camera2D" parent="." index="3" unique_id=1970743919]
-position = Vector2(958, 546)
+position = Vector2(1045, 595)
