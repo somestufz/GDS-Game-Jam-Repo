@@ -4,6 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://bbq0ei27skcst" path="res://scenes/entity/horse.tscn" id="2_2pcnx"]
 [ext_resource type="PackedScene" uid="uid://clpdks2dsn0h8" path="res://scenes/entity/box.tscn" id="3_b07wc"]
 [ext_resource type="PackedScene" uid="uid://dsjphmga78ryh" path="res://scenes/interactables/end_zone.tscn" id="4_sdt4b"]
+[ext_resource type="Script" uid="uid://6uw8euyvey18" path="res://scenes/main/levels/temporary_tutorial.gd" id="5_7xh0j"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_llcc8"]
+font_size = 24
 
 [node name="Level_horse_1" unique_id=1366407638 instance=ExtResource("1_ycvm5")]
 
@@ -21,3 +25,30 @@ position = Vector2(750, 350)
 
 [node name="Box2" parent="Entities/Items" parent_id_path=PackedInt32Array(115791320) index="1" unique_id=884026375 instance=ExtResource("3_b07wc")]
 position = Vector2(850, 350)
+
+[node name="TemporaryTutorial" type="CanvasLayer" parent="." index="4" unique_id=1833275454]
+script = ExtResource("5_7xh0j")
+
+[node name="BottomLeft" type="Control" parent="TemporaryTutorial" index="0" unique_id=2080381270]
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TemporaryTutorial/BottomLeft" index="0" unique_id=252287454]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 78.0
+offset_right = 382.0
+offset_bottom = 286.0
+
+[node name="Label" type="Label" parent="TemporaryTutorial/BottomLeft/VBoxContainer" index="0" unique_id=1093022684]
+layout_mode = 2
+text = "Quick tutorial :
+
+The goal is to get all the animals in the end zone.
+
+Try pushing some boxes with the horse!
+"
+label_settings = SubResource("LabelSettings_llcc8")

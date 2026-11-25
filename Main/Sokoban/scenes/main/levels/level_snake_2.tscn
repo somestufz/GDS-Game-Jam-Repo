@@ -21,3 +21,11 @@ position = Vector2(550, 250)
 
 [node name="Box3" parent="Entities/Items" parent_id_path=PackedInt32Array(115791320) index="2" unique_id=162763447 instance=ExtResource("3_82lyx")]
 position = Vector2(850, 350)
+
+[node name="Label" parent="TemporaryTutorial/BottomLeft/VBoxContainer" parent_id_path=PackedInt32Array(2377517) index="0" unique_id=1452728277]
+text = "Quick tutorial :
+
+The animals are helping each other out!
+
+Press Shift to switch between them.
+"
