@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://coevkkneie7mj" path="res://scenes/entity/item.tscn" id="1_dleey"]
 [ext_resource type="Script" uid="uid://cloumq2kun5tk" path="res://scenes/entity/locked_door.gd" id="2_lptcr"]
 [ext_resource type="Texture2D" uid="uid://cslbpytwptx4i" path="res://assets/bin/greyerSquare.png" id="3_lptcr"]
+[ext_resource type="Texture2D" uid="uid://djkthjtqmqv8h" path="res://assets/bin/emojis/KeyDoor.png" id="4_lptcr"]
 [ext_resource type="Texture2D" uid="uid://csd8u6dkpky7n" path="res://assets/bin/lockedDoor.png" id="4_ntti1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l1h4p"]
@@ -15,12 +16,8 @@ script = ExtResource("2_lptcr")
 shape = SubResource("RectangleShape2D_l1h4p")
 
 [node name="Sprite2D" parent="SpriteHolder" parent_id_path=PackedInt32Array(2057166936) index="0" unique_id=983468098]
-modulate = Color(1, 1, 0.40392157, 1)
-scale = Vector2(0.15, 0.2)
-texture = ExtResource("3_lptcr")
-
-[node name="DoorSprite2" type="Sprite2D" parent="SpriteHolder" parent_id_path=PackedInt32Array(2057166936) index="1" unique_id=333876626]
-texture = ExtResource("4_ntti1")
+scale = Vector2(3, 3)
+texture = ExtResource("4_lptcr")
 
 [node name="DoorJoint" type="Node2D" parent="." index="3" unique_id=945503769]
 visible = false

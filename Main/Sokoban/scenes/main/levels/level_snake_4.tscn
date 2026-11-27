@@ -56,8 +56,8 @@ position = Vector2(750, 650)
 position = Vector2(1045, 595)
 
 [node name="TemporaryTutorial" type="CanvasLayer" parent="." index="5" unique_id=1982259977]
-offset = Vector2(0, 200)
-transform = Transform2D(1, 0, 0, 1, 0, 200)
+offset = Vector2(0, 100)
+transform = Transform2D(1, 0, 0, 1, 0, 100)
 script = ExtResource("9_j4wwd")
 
 [node name="BottomLeft" type="Control" parent="TemporaryTutorial" index="0" unique_id=363966762]
@@ -78,6 +78,7 @@ offset_bottom = 286.0
 layout_mode = 2
 text = "Pressure plates?
 
-But how do the animals know which
-pressure plate activates which door?"
+They seem to open magical doors for the animal pals.
+
+Yep, definitely magical."
 label_settings = SubResource("LabelSettings_oo2pt")
