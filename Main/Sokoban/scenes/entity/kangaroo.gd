@@ -7,6 +7,7 @@ func _process(delta: float) -> void:
 			player_move_mult(buffer_action)
 			main.player_move()
 			buffer_action = ""
+			play_audio()
 	else:
 		buffer_action = ""
 

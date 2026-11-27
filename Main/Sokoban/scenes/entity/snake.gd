@@ -12,4 +12,4 @@ func player_action(collider, dir, vector_change) -> void:
 		
 		if collider_back is Item or collider_back is Player:
 			collider_back.pull_direction(inputs[dir])
-			print("pulling")
+			play_swish_audio()

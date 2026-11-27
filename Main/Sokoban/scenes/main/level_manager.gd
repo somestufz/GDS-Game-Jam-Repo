@@ -12,10 +12,20 @@ var current_level_id : int = -1
 	"res://scenes/main/levels/level_horse_3.tscn"
 ]
 
+@export var musik : Array[AudioStream]
+@export var audio_clips : Array[AudioStream]
+
+@onready var sfx_stream: AudioStreamPlayer2D = $SfxStream
+@onready var musik_stream: AudioStreamPlayer2D = $MusikStream
+
+
 func _ready() -> void:
 	current_level = $Level
+	
+	play_music()
+	musik_stream.finished.connect(play_music)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	#print(Globals.end_zone_count, "/", Globals.end_zone_total)
 	if Globals.end_zone_count == Globals.end_zone_total and ui.current_menu == "Game":
 		ui.set_current_menu("Win")
@@ -34,6 +44,8 @@ func load_to_level(id : int) -> void:
 	var level_scene_instance = level_scene.instantiate()
 	add_child(level_scene_instance)
 	current_level = level_scene_instance
+	
+	play_audio(0)
 
 func load_next_level() -> void:
 	current_level_id += 1
@@ -52,3 +64,12 @@ func deload() -> void:
 	var level_scene = Node2D.new()
 	add_child(level_scene)
 	current_level = level_scene
+
+func play_audio(id : int) -> void:
+	if len(audio_clips) > 0:
+		sfx_stream.stream = audio_clips[id]
+		sfx_stream.play()
+
+func play_music() -> void:
+	musik_stream.stream = musik[randi() % 2]
+	musik_stream.play()

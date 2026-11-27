@@ -48,12 +48,16 @@ position = Vector2(650, 650)
 
 [node name="Horse" parent="Entities/Players" parent_id_path=PackedInt32Array(569333621) index="0" unique_id=540745152 instance=ExtResource("4_vycae")]
 position = Vector2(350, 250)
+audio_clips = Array[AudioStream]([])
 
 [node name="Snake" parent="Entities/Players" parent_id_path=PackedInt32Array(569333621) index="1" unique_id=1461206000 instance=ExtResource("5_41m8q")]
 position = Vector2(1250, 750)
+audio_clips = Array[AudioStream]([])
 
 [node name="Chamaeleon" parent="Entities/Players" parent_id_path=PackedInt32Array(569333621) index="2" unique_id=157653865 instance=ExtResource("6_w1ux2")]
 position = Vector2(1350, 250)
+audio_clips = Array[AudioStream]([])
 
 [node name="Kangaroo" parent="Entities/Players" parent_id_path=PackedInt32Array(569333621) index="3" unique_id=374969225 instance=ExtResource("7_w1ux2")]
 position = Vector2(350, 850)
+audio_clips = Array[AudioStream]([])

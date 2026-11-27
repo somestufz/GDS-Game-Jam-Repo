@@ -20,16 +20,16 @@ func body_exit_interact(body : Node2D) -> void:
 	elif body is Item:
 		item_exit(body)
 
-func player_entered(body : Node2D) -> void:
+func player_entered(_body : Node2D) -> void:
 	pass
 
-func item_entered(body : Node2D) -> void:
+func item_entered(_body : Node2D) -> void:
 	pass
 
-func player_exit(body : Node2D) -> void:
+func player_exit(_body : Node2D) -> void:
 	pass
 
-func item_exit(body : Node2D) -> void:
+func item_exit(_body : Node2D) -> void:
 	pass
 
 func play_audio():

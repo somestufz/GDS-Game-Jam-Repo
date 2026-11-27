@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dyt4xo1kinyxp"]
 
 [ext_resource type="Script" uid="uid://bdtcgoc85go2c" path="res://scenes/interactables/interactables.gd" id="1_5ib7w"]
-[ext_resource type="AudioStream" uid="uid://cp5d2h1ph22vl" path="res://assets/audio/sfx/swish-5.wav" id="2_752rw"]
+[ext_resource type="AudioStream" uid="uid://dh50qtw0sw24t" path="res://assets/audio/sfx/items1/swish_2.mp3" id="2_752rw"]
 
 [node name="Interactables" type="Area2D" unique_id=1655735542]
 script = ExtResource("1_5ib7w")

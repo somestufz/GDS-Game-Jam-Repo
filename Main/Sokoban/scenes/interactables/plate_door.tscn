@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://cfsovkrj48qwm" path="res://assets/bin/pressurePlatePixelText.png" id="2_ssuha"]
 [ext_resource type="Script" uid="uid://b0u1jls38r781" path="res://scenes/interactables/plate_door.gd" id="2_ufra8"]
 [ext_resource type="Texture2D" uid="uid://cslbpytwptx4i" path="res://assets/bin/greyerSquare.png" id="3_efuvt"]
-[ext_resource type="AudioStream" uid="uid://i2dywjmglxf6" path="res://assets/audio/sfx/swish-7.wav" id="5_tlqnk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ow5a4"]
 size = Vector2(90, 90)
@@ -39,9 +38,6 @@ texture = ExtResource("3_efuvt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorJoint/BlockArea" index="0" unique_id=1633908533]
 shape = SubResource("RectangleShape2D_xrfel")
-
-[node name="AudioPlayer" parent="." index="3" unique_id=1354276645]
-stream = ExtResource("5_tlqnk")
 
 [connection signal="body_entered" from="DoorJoint/BlockArea" to="." method="_on_block_area_body_entered"]
 [connection signal="body_exited" from="DoorJoint/BlockArea" to="." method="_on_block_area_body_exited"]

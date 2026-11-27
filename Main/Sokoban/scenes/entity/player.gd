@@ -5,10 +5,12 @@ extends Entity
 
 @onready var ray: RayCast2D = $RayDown
 @onready var main : Node2D = $"../../.."
-@onready var audio_stream_player: AudioStreamPlayer2D = $AudioStreamPlayer
 @onready var collision: CollisionShape2D = $CollisionShape2D
 
 @export var audio_clips : Array[AudioStream]
+
+@onready var audio_stream_swish: AudioStreamPlayer2D = $AudioStreamPlayerSwish
+
 
 var player_id := 0
 var active := true:
@@ -27,7 +29,7 @@ var inputs = {
 	"move_right" : Vector2.RIGHT
 }
 
-func _unhandled_input(event: InputEvent) -> void:
+func _unhandled_input(_event: InputEvent) -> void:
 	if active:
 		for dir in inputs:
 			if Input.is_action_just_pressed(dir):
@@ -61,6 +63,7 @@ func player_action(collider, dir, vector_change) -> void:
 		elif(collider is Item or collider is Player):
 			var can_push = collider.push_direction(inputs[dir])
 			if can_push:
+				play_swish_audio()
 				move_anim(vector_change)
 			else:
 				pass
@@ -76,7 +79,10 @@ func move_anim(vector_change):
 	done_action = false
 	collision.disabled = false
 
-func play_audio():
-	pass
-	#audio_stream_player.stream = audio_clips[randi() % len(audio_clips)]
-	#audio_stream_player.play()
+func play_audio() -> void:
+	if len(audio_clips) > 0:
+		audio_stream_player.stream = audio_clips[randi() % len(audio_clips)]
+		audio_stream_player.play()
+
+func play_swish_audio() -> void:
+	audio_stream_swish.play()

@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://b5m7y1o1clfwm"]
 
 [ext_resource type="Script" uid="uid://du2uagds7obvc" path="res://scenes/UI/ui_controller.gd" id="1_35jxk"]
+[ext_resource type="AudioStream" uid="uid://b6eh28dfprxs2" path="res://assets/audio/sfx/ui1/select_1.mp3" id="2_7a1qy"]
 [ext_resource type="Script" uid="uid://b4pff3cwjlqu3" path="res://scenes/UI/level_select.gd" id="2_tpnoy"]
+[ext_resource type="AudioStream" uid="uid://de0mqr1udkq4e" path="res://assets/audio/sfx/ui1/start_1.mp3" id="3_d68qh"]
 [ext_resource type="Script" uid="uid://bboa8jfbcitbl" path="res://scenes/UI/level_grid.gd" id="3_vb61p"]
+[ext_resource type="AudioStream" uid="uid://dnagv37ll5fea" path="res://assets/audio/sfx/ui1/transition_swish_1.mp3" id="4_d68qh"]
 [ext_resource type="PackedScene" uid="uid://c0dp7nsxo7cn6" path="res://scenes/UI/level_container.tscn" id="4_owlbh"]
 [ext_resource type="Script" uid="uid://dov67a4moryo0" path="res://scenes/UI/main_menu.gd" id="5_c5elv"]
 [ext_resource type="Script" uid="uid://bidttpsii63gi" path="res://scenes/UI/pause.gd" id="6_cketn"]
@@ -77,6 +80,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_35jxk")
+audio_clips = Array[AudioStream]([ExtResource("2_7a1qy"), ExtResource("3_d68qh"), ExtResource("4_d68qh")])
 
 [node name="LevelSelect" type="HBoxContainer" parent="." unique_id=895562864]
 visible = false
@@ -433,6 +437,12 @@ grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.49429923
 color = Color(0, 0, 0, 1)
+
+[node name="SfxStream" type="AudioStreamPlayer2D" parent="." unique_id=1796511780]
+volume_db = -4.0
+
+[node name="SwishStream" type="AudioStreamPlayer2D" parent="." unique_id=1206257573]
+stream = ExtResource("4_d68qh")
 
 [connection signal="pressed" from="LevelSelect/MarginContainer/Back" to="LevelSelect" method="_on_back_pressed"]
 [connection signal="pressed" from="MainMenu/StartContainer/StartSelect" to="MainMenu" method="_on_start_select_pressed"]

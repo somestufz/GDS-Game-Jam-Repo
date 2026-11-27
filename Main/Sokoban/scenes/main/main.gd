@@ -2,11 +2,15 @@ extends Node2D
 
 @onready var players: Node2D = $Entities/Players
 @onready var items: Node2D = $Entities/Items
+@onready var audio_stream: AudioStreamPlayer2D = $AudioStream
+
 
 var entity_references : Array[CharacterBody2D];
 var location_dictionary_save : Dictionary
 var lol_array : Array[Dictionary]
 var turn_number := 0
+
+@export var audio_clips : Array[AudioStream]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	assign_player_ids()
@@ -16,7 +20,7 @@ func _ready() -> void:
 	lol_array.push_back(update_location_dictionary())
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("shift"):
 		shift()
@@ -24,6 +28,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("undo"):
 		turn_number -= 1
 		turn_number = max(0,turn_number)
+		play_audio(1)
 		if !lol_array.is_empty():
 			load_location_dictionary(lol_array.pop_back())
 
@@ -35,6 +40,8 @@ func shift() -> void:
 		Globals.player_id = 0
 	
 	update_active_player()
+	
+	play_audio(0)
 
 func update_active_player():
 	for player in players.get_children():
@@ -76,3 +83,8 @@ func load_location_dictionary(dict : Dictionary) -> void:
 func player_move() -> void:
 	turn_number += 1
 	lol_array.push_back(update_location_dictionary())
+
+func play_audio(id : int) -> void:
+	if len(audio_clips) > 0:
+		audio_stream.stream = audio_clips[id]
+		audio_stream.play()

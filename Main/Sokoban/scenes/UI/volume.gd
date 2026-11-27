@@ -18,5 +18,5 @@ func _on_h_slider_value_changed(value: float) -> void:
 func _on_h_slider_drag_started() -> void:
 	audio_stream_player.volume_db = 0
 
-func _on_h_slider_drag_ended(value_changed: bool) -> void:
+func _on_h_slider_drag_ended(_value_changed: bool) -> void:
 	audio_stream_player.volume_db = -10000000

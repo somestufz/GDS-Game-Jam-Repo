@@ -17,3 +17,5 @@ shape = SubResource("RectangleShape2D_k2fmo")
 [node name="SpriteHolder" type="Node2D" parent="." unique_id=2057166936]
 
 [node name="Sprite2D" type="Sprite2D" parent="SpriteHolder" unique_id=983468098]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1253575143]

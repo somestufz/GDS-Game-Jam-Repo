@@ -21,22 +21,24 @@ func _process(delta: float) -> void:
 	door.position = lerp(door.position,Vector2(0,1 * clamp(pressed_counter + blocking_counter,0,1) * tile_size),delta * 8.0)
 	#door_sprite.global_position = lerp(door.position,Vector2(0,1 * clamp(pressed_counter,0,1) * tile_size),delta * 8.0)
 
-func player_entered(body : Node2D) -> void:
+func player_entered(_body : Node2D) -> void:
 	pressed = true
 	pressed_counter += 1
 	
-	#play_audio()
+	play_audio()
 
 
-func item_entered(body : Node2D) -> void:
+func item_entered(_body : Node2D) -> void:
 	pressed = true
 	pressed_counter += 1
 
-func player_exit(body : Node2D) -> void:
+func player_exit(_body : Node2D) -> void:
 	pressed = false
 	pressed_counter -= 1
+	
+	play_audio()
 
-func item_exit(body : Node2D) -> void:
+func item_exit(_body : Node2D) -> void:
 	pressed = false
 	pressed_counter -= 1
 

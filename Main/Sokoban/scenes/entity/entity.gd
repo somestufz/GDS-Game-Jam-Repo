@@ -6,13 +6,16 @@ var tile_size = 100
 enum entities {HORSE,BOX,WALL}
 @export var entity : entities
 
+@onready var audio_stream_player: AudioStreamPlayer2D = $AudioStreamPlayer
 @onready var ray_1: RayCast2D = $RayDown
 @onready var sprite_holder: Node2D = $SpriteHolder
+
+
 
 """make toolscript for position"""
 '''puzzle script as a way to make puzzles'''
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 	#if Engine.is_editor_hint():
 	#	global_position = global_position.snapped(Vector2(tile_size,tile_size))
@@ -57,7 +60,6 @@ func push_direction(dir : Vector2) -> bool:
 	elif extra_push_result != null:
 		return extra_push_result
 	elif collider is Chamaeleon:
-		print(collider.ability)
 		if collider.ability:
 			move(dir)
 			return true
@@ -80,7 +82,7 @@ func push_direction(dir : Vector2) -> bool:
 	
 	return true
 
-func push_extra_check(collider):
+func push_extra_check(_collider):
 	return null
 
 func pull_direction(dir : Vector2) -> void:
@@ -89,6 +91,7 @@ func pull_direction(dir : Vector2) -> void:
 func move(dir):
 	var vector_change = dir * tile_size
 	#position += vector_change
+	play_audio_move()
 	move_anim(vector_change)
 
 func twitch_anim():
@@ -99,3 +102,6 @@ func twitch_anim():
 func move_anim(vector_change):
 	var tween = get_tree().create_tween()
 	tween.tween_property(self,"position",position + vector_change,0.1)
+
+func play_audio_move() -> void:
+	pass

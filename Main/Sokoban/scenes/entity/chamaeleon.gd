@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 	modulate.a = 1.0 - (int(ability) * 0.8)
 	collision_shape_2d.disabled = ability
 
-func player_action(collider, dir, vector_change) -> void:
+func player_action(collider, _dir, vector_change) -> void:
 	if collider != null:
 		if collider.is_in_group("Walls"):
 			pass

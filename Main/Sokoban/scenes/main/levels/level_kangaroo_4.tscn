@@ -21,12 +21,6 @@ position = Vector2(250, 550)
 position = Vector2(1150, 750)
 door_offset = Vector2(-2, 0)
 
-[node name="Kangaroo" parent="Entities/Players" parent_id_path=PackedInt32Array(569333621) index="0" unique_id=540745152]
-position = Vector2(550, 550)
-
-[node name="Snake" parent="Entities/Players" parent_id_path=PackedInt32Array(569333621) index="1" unique_id=1457271995 instance=ExtResource("4_exi7f")]
-position = Vector2(350, 350)
-
 [node name="Box" parent="Entities/Items" parent_id_path=PackedInt32Array(115791320) index="0" unique_id=1804874952]
 position = Vector2(250, 350)
 
@@ -53,6 +47,12 @@ position = Vector2(450, 250)
 
 [node name="Box9" parent="Entities/Items" parent_id_path=PackedInt32Array(115791320) index="8" unique_id=1726561454 instance=ExtResource("5_0xiwk")]
 position = Vector2(450, 450)
+
+[node name="Kangaroo" parent="Entities/Players" parent_id_path=PackedInt32Array(569333621) index="0" unique_id=540745152]
+position = Vector2(550, 550)
+
+[node name="Snake" parent="Entities/Players" parent_id_path=PackedInt32Array(569333621) index="1" unique_id=1457271995 instance=ExtResource("4_exi7f")]
+position = Vector2(350, 350)
 
 [node name="Label" parent="TemporaryTutorial/BottomLeft/VBoxContainer" parent_id_path=PackedInt32Array(1134396055) index="0" unique_id=50388121]
 text = ""
