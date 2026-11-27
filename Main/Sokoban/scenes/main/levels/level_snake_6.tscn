@@ -1,0 +1,89 @@
+[gd_scene format=4 uid="uid://bv0b1vkhcno5y"]
+
+[ext_resource type="PackedScene" uid="uid://d1v55yw28f1n0" path="res://scenes/main/main.tscn" id="1_okicu"]
+[ext_resource type="PackedScene" uid="uid://dsjphmga78ryh" path="res://scenes/interactables/end_zone.tscn" id="2_ikvrc"]
+[ext_resource type="PackedScene" uid="uid://clpdks2dsn0h8" path="res://scenes/entity/box.tscn" id="3_iijmx"]
+[ext_resource type="PackedScene" uid="uid://chkubp3wqn5um" path="res://scenes/entity/key.tscn" id="4_1dqgq"]
+[ext_resource type="PackedScene" uid="uid://cuw7sr0rubgm6" path="res://scenes/entity/locked_door.tscn" id="5_rmrha"]
+[ext_resource type="PackedScene" uid="uid://bbq0ei27skcst" path="res://scenes/entity/horse.tscn" id="6_ne4kq"]
+[ext_resource type="PackedScene" uid="uid://byhvj73qsecs3" path="res://scenes/entity/snake.tscn" id="7_wt410"]
+[ext_resource type="Script" uid="uid://6uw8euyvey18" path="res://scenes/main/levels/temporary_tutorial.gd" id="8_jxfvi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oo2pt"]
+font_size = 24
+
+[node name="Level_snake_6" unique_id=1366407638 instance=ExtResource("1_okicu")]
+
+[node name="TileMapLayerWalls" parent="." index="1" unique_id=1789399568]
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAEAAAAAAAEAAQAAAAEAAAAAAAIAAQAAAAEAAAAAAAMAAQAAAAEAAAAAAAQAAQAAAAEAAAAAAAUAAQAAAAEAAAAAAAYAAQAAAAEAAAAAAAcAAQAAAAEAAAAAAAgAAQAAAAEAAAABAAAAAQAAAAEAAAABAAEAAQAAAAEAAAABAAIAAQAAAAEAAAABAAMAAQAAAAEAAAABAAQAAQAAAAEAAAABAAUAAQAAAAEAAAABAAYAAQAAAAEAAAABAAcAAQAAAAEAAAABAAgAAQAAAAEAAAACAAAAAQAAAAEAAAACAAEAAQAAAAEAAAACAAIAAQAAAAEAAAACAAMAAQAAAAEAAAACAAQAAQAAAAEAAAACAAUAAQAAAAEAAAACAAYAAQAAAAEAAAACAAcAAQAAAAEAAAACAAgAAQAAAAEAAAADAAAAAQAAAAEAAAADAAEAAQAAAAEAAAADAAIAAQAAAAEAAAADAAMAAQAAAAEAAAADAAQAAQAAAAEAAAADAAUAAQAAAAEAAAADAAYAAQAAAAEAAAADAAcAAQAAAAEAAAADAAgAAQAAAAEAAAAEAAAAAQAAAAEAAAAEAAEAAQAAAAEAAAAEAAIAAQAAAAEAAAAEAAMAAQAAAAEAAAAEAAQAAQAAAAEAAAAEAAUAAQAAAAEAAAAEAAYAAQAAAAEAAAAEAAcAAQAAAAEAAAAEAAgAAQAAAAEAAAAFAAAAAQAAAAEAAAAFAAEAAQAAAAEAAAAFAAIAAQAAAAEAAAAFAAMAAQAAAAEAAAAFAAQAAQAAAAEAAAAFAAUAAQAAAAEAAAAFAAYAAQAAAAEAAAAFAAcAAQAAAAEAAAAFAAgAAQAAAAEAAAAGAAAAAQAAAAEAAAAGAAEAAQAAAAEAAAAGAAIAAQAAAAEAAAAGAAMAAQAAAAEAAAAGAAcAAQAAAAEAAAAGAAgAAQAAAAEAAAAHAAAAAQAAAAEAAAAHAAEAAQAAAAEAAAAIAAAAAQAAAAEAAAAJAAAAAQAAAAEAAAAJAAEAAQAAAAEAAAAKAAAAAQAAAAEAAAAKAAEAAQAAAAEAAAALAAAAAQAAAAEAAAAMAAAAAQAAAAEAAAANAAAAAQAAAAEAAAANAAEAAQAAAAEAAAAAAAkAAQAAAAEAAAABAAkAAQAAAAEAAAACAAkAAQAAAAEAAAADAAkAAQAAAAEAAAAEAAkAAQAAAAEAAAAFAAkAAQAAAAEAAAAGAAkAAQAAAAEAAAAHAAkAAQAAAAEAAAAIAAkAAQAAAAEAAAAJAAkAAQAAAAEAAAAKAAkAAQAAAAEAAAALAAkAAQAAAAEAAAAOAAkAAQAAAAEAAAAOAAIAAQAAAAEAAAAOAAEAAQAAAAEAAAAOAAAAAQAAAAEAAAAAAAoAAQAAAAEAAAABAAoAAQAAAAEAAAACAAoAAQAAAAEAAAADAAoAAQAAAAEAAAAEAAoAAQAAAAEAAAAFAAoAAQAAAAEAAAAGAAoAAQAAAAEAAAAHAAoAAQAAAAEAAAAIAAoAAQAAAAEAAAAJAAoAAQAAAAEAAAAKAAoAAQAAAAEAAAALAAoAAQAAAAEAAAAMAAoAAQAAAAEAAAANAAoAAQAAAAEAAAAOAAoAAQAAAAEAAAAPAAoAAQAAAAEAAAAPAAkAAQAAAAEAAAAPAAEAAQAAAAEAAAAPAAAAAQAAAAEAAAAQAAkAAQAAAAEAAAARAAgAAQAAAAEAAAASAAcAAQAAAAEAAAAQAAcAAQAAAAEAAAARAAYAAQAAAAEAAAASAAUAAQAAAAEAAAARAAoAAQAAAAEAAAASAAkAAQAAAAEAAAAQAAUAAQAAAAEAAAARAAQAAQAAAAEAAAASAAMAAQAAAAEAAAARAAIAAQAAAAEAAAASAAEAAQAAAAEAAAAQAAEAAQAAAAEAAAARAAAAAQAAAAEAAAAQAAoAAQAAAAEAAAARAAkAAQAAAAEAAAASAAgAAQAAAAEAAAAQAAgAAQAAAAEAAAARAAcAAQAAAAEAAAASAAYAAQAAAAEAAAAQAAYAAQAAAAEAAAARAAUAAQAAAAEAAAASAAQAAQAAAAEAAAAQAAQAAQAAAAEAAAARAAMAAQAAAAEAAAASAAIAAQAAAAEAAAARAAEAAQAAAAEAAAASAAAAAQAAAAEAAAAQAAAAAQAAAAEAAAASAAoAAQAAAAEAAAAAAAsAAQAAAAEAAAABAAsAAQAAAAEAAAACAAsAAQAAAAEAAAADAAsAAQAAAAEAAAAEAAsAAQAAAAEAAAAFAAsAAQAAAAEAAAAGAAsAAQAAAAEAAAAHAAsAAQAAAAEAAAAIAAsAAQAAAAEAAAAJAAsAAQAAAAEAAAAKAAsAAQAAAAEAAAALAAsAAQAAAAEAAAAMAAsAAQAAAAEAAAANAAsAAQAAAAEAAAAOAAsAAQAAAAEAAAAPAAsAAQAAAAEAAAAQAAsAAQAAAAEAAAARAAsAAQAAAAEAAAASAAsAAQAAAAEAAAATAAsAAQAAAAEAAAATAAoAAQAAAAEAAAATAAkAAQAAAAEAAAATAAgAAQAAAAEAAAATAAcAAQAAAAEAAAATAAYAAQAAAAEAAAATAAUAAQAAAAEAAAATAAQAAQAAAAEAAAATAAMAAQAAAAEAAAATAAIAAQAAAAEAAAATAAEAAQAAAAEAAAATAAAAAQAAAAEAAAAOAAYAAQAAAAEAAAAOAAUAAQAAAAEAAAAOAAQAAQAAAAEAAAAMAAkAAQAAAAEAAAANAAkAAQAAAAEAAAANAAgAAQAAAAEAAAAOAAgAAQAAAAEAAAAOAAcAAQAAAAEAAAAMAAYAAQAAAAEAAAAMAAcAAQAAAAEAAAAMAAgAAQAAAAEAAAALAAgAAQAAAAEAAAAPAAgAAQAAAAEAAAAPAAcAAQAAAAEAAAAPAAYAAQAAAAEAAAAPAAUAAQAAAAEAAAAPAAQAAQAAAAEAAAAPAAMAAQAAAAEAAAAPAAIAAQAAAAEAAAAQAAMAAQAAAAEAAAAQAAIAAQAAAAEAAAANAAIAAQAAAAEAAAAMAAIAAQAAAAEAAAAMAAMAAQAAAAEAAAAOAAMAAQAAAAEAAAAMAAQAAQAAAAEAAAALAAEAAQAAAAEAAAALAAIAAQAAAAEAAAAMAAEAAQAAAAEAAAAKAAIAAQAAAAEAAAAJAAIAAQAAAAEAAAAIAAIAAQAAAAEAAAAHAAIAAQAAAAEAAAAIAAEAAQAAAAEAAAAGAAUAAQAAAAEAAAAGAAQAAQAAAAEAAAAGAAYAAQAAAAEAAAAJAAgAAQAAAAEAAAAKAAgAAQAAAAEAAAAHAAgAAQAAAAEAAAAIAAgAAQAAAAEAAAA=")
+
+[node name="EndZone" parent="Entities/Interactables" parent_id_path=PackedInt32Array(1227834798) index="0" unique_id=1238718382 instance=ExtResource("2_ikvrc")]
+position = Vector2(1350, 350)
+
+[node name="EndZone2" parent="Entities/Interactables" parent_id_path=PackedInt32Array(1227834798) index="1" unique_id=1774459019 instance=ExtResource("2_ikvrc")]
+position = Vector2(1350, 750)
+
+[node name="Box" parent="Entities/Items" parent_id_path=PackedInt32Array(115791320) index="0" unique_id=745880308 instance=ExtResource("3_iijmx")]
+position = Vector2(1150, 550)
+
+[node name="Box2" parent="Entities/Items" parent_id_path=PackedInt32Array(115791320) index="1" unique_id=884026375 instance=ExtResource("3_iijmx")]
+position = Vector2(950, 350)
+
+[node name="Box3" parent="Entities/Items" parent_id_path=PackedInt32Array(115791320) index="2" unique_id=1312979184 instance=ExtResource("3_iijmx")]
+position = Vector2(1150, 350)
+
+[node name="Box4" parent="Entities/Items" parent_id_path=PackedInt32Array(115791320) index="3" unique_id=559330866 instance=ExtResource("3_iijmx")]
+position = Vector2(1150, 750)
+
+[node name="Box5" parent="Entities/Items" parent_id_path=PackedInt32Array(115791320) index="4" unique_id=540745152 instance=ExtResource("3_iijmx")]
+position = Vector2(950, 750)
+
+[node name="Box6" parent="Entities/Items" parent_id_path=PackedInt32Array(115791320) index="5" unique_id=1819963043 instance=ExtResource("3_iijmx")]
+position = Vector2(1050, 650)
+
+[node name="Box7" parent="Entities/Items" parent_id_path=PackedInt32Array(115791320) index="6" unique_id=2093239033 instance=ExtResource("3_iijmx")]
+position = Vector2(1050, 450)
+
+[node name="Box8" parent="Entities/Items" parent_id_path=PackedInt32Array(115791320) index="7" unique_id=527483556 instance=ExtResource("3_iijmx")]
+position = Vector2(950, 550)
+
+[node name="Key" parent="Entities/Items" parent_id_path=PackedInt32Array(115791320) index="8" unique_id=1116332337 instance=ExtResource("4_1dqgq")]
+position = Vector2(1050, 750)
+
+[node name="LockedDoor" parent="Entities/Items" parent_id_path=PackedInt32Array(115791320) index="9" unique_id=433911848 instance=ExtResource("5_rmrha")]
+position = Vector2(1250, 550)
+
+[node name="Horse" parent="Entities/Players" parent_id_path=PackedInt32Array(569333621) index="0" unique_id=649198258 instance=ExtResource("6_ne4kq")]
+position = Vector2(750, 650)
+
+[node name="Snake" parent="Entities/Players" parent_id_path=PackedInt32Array(569333621) index="1" unique_id=1019952145 instance=ExtResource("7_wt410")]
+position = Vector2(750, 450)
+
+[node name="Camera2D" parent="." index="3" unique_id=1970743919]
+position = Vector2(1045, 595)
+
+[node name="TemporaryTutorial" type="CanvasLayer" parent="." index="5" unique_id=1982259977]
+script = ExtResource("8_jxfvi")
+
+[node name="BottomLeft" type="Control" parent="TemporaryTutorial" index="0" unique_id=363966762]
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TemporaryTutorial/BottomLeft" index="0" unique_id=651359363]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 78.0
+offset_right = 382.0
+offset_bottom = 286.0
+
+[node name="Label" type="Label" parent="TemporaryTutorial/BottomLeft/VBoxContainer" index="0" unique_id=1153933342]
+layout_mode = 2
+text = "What's this, a key?
+
+Why do animals need keys?
+
+I guess they could push it into the locked door?"
+label_settings = SubResource("LabelSettings_oo2pt")
